@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WarehouseSimulator.Logika
+namespace WarehouseSimulator.Symulator
 {
     public enum TypPozycji
     {

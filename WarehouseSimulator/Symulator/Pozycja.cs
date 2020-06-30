@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WarehouseSimulator.BazaDanych;
 using WarehouseSimulator.Kontrolki;
 
-namespace WarehouseSimulator.Logika
+namespace WarehouseSimulator.Symulator
 {
     public class Pozycja : IPozycja
     {

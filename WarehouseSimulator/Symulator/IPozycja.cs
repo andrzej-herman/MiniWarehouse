@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WarehouseSimulator.Kontrolki;
 
-namespace WarehouseSimulator.Logika
+namespace WarehouseSimulator.Symulator
 {
     public interface IPozycja
     {

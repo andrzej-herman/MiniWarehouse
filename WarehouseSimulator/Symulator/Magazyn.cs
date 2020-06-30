@@ -10,7 +10,7 @@ using WarehouseSimulator.Forms;
 using WarehouseSimulator.Kontrolki;
 using WarehouseSimulator.Properties;
 
-namespace WarehouseSimulator.Logika
+namespace WarehouseSimulator.Symulator
 {
     public class Magazyn
     {
