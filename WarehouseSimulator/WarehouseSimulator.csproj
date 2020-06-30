@@ -139,6 +139,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PozycjeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Backup\MiniSimulator.bak" />
     <None Include="BazaDanych\PozycjeModel.edmx.diagram">
       <DependentUpon>PozycjeModel.edmx</DependentUpon>
     </None>

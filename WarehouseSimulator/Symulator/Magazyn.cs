@@ -26,13 +26,19 @@ namespace WarehouseSimulator.Symulator
 
 
                                                     
-        #region Tworzenie magazynu
+        #region Public
         public void UtworzMagazyn()
         {
             UtworzPozycje();
             UtworzElementyDodatkowe();
         }
 
+        #endregion
+
+
+
+
+        #region Private
         private void UtworzPozycje()
         {
             pozycje = komunikatorDb.PobierzListePozycji();
@@ -82,20 +88,20 @@ namespace WarehouseSimulator.Symulator
                 okno.Controls.Add(p);
             }
 
-            int[] x = new int[4] {475, 1471, 475, 1471 };
+            int[] x = new int[4] { 475, 1471, 475, 1471 };
             y = new int[4] { 39, 39, 561, 561 };
             for (int idx = 0; idx < 4; idx++)
             {
                 Panel p = new Panel();
                 p.BackColor = Color.DarkBlue;
-                p.SetBounds(x[idx], y[idx],  10, 458);
+                p.SetBounds(x[idx], y[idx], 10, 458);
                 okno.Controls.Add(p);
             }
 
             int[] numer = new int[20] { 17, 13, 9, 5, 1, 3, 7, 11, 15, 19, 18, 14, 10, 6, 2, 4, 8, 12, 16, 20 };
             int xx = 521;
             int zz = 521;
-            int yy = 60; 
+            int yy = 60;
             for (int idx = 0; idx < 20; idx++)
             {
                 if (idx > 9)
@@ -111,14 +117,16 @@ namespace WarehouseSimulator.Symulator
                 {
                     nazwaZatoki.SetBounds(zz, yy, 50, 25);
                     zz += 96;
-                }    
+                }
 
                 okno.Controls.Add(nazwaZatoki);
             }
 
 
-        } 
+        }  
         #endregion
+
+
 
 
 

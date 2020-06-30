@@ -17,10 +17,10 @@ namespace WarehouseSimulator.Forms
         public frmMagazyn()
         {
             InitializeComponent();
-            this.Shown += StartAplikacji;
+            this.Shown += PokazSymulator;
         }
 
-        private void StartAplikacji(object sender, EventArgs e)
+        private void PokazSymulator(object sender, EventArgs e)
         {
             
             //frmOperacja.WykonajWTle("Tworzenie magazynu", () =>
