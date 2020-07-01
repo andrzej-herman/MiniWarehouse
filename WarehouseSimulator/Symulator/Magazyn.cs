@@ -9,6 +9,9 @@ using WarehouseSimulator.BazaDanych;
 using WarehouseSimulator.Forms;
 using WarehouseSimulator.Kontrolki;
 using WarehouseSimulator.Properties;
+using WarehouseSimulator.Symulator.Pozycje;
+using WarehouseSimulator.Symulator;
+using WarehouseSimulator.Symulator.Palety;
 
 namespace WarehouseSimulator.Symulator
 {
@@ -17,6 +20,13 @@ namespace WarehouseSimulator.Symulator
         private Form okno;
         private Db komunikatorDb;
         private IEnumerable<IPozycja> pozycje;
+        private Master master;
+        private List<Paleta> palety;
+
+        public IEnumerable<IPozycja> Pozycje
+        {
+            get { return pozycje; }
+        } 
 
         public Magazyn(Form _okno)
         {
@@ -27,10 +37,68 @@ namespace WarehouseSimulator.Symulator
 
                                                     
         #region Public
+
         public void UtworzMagazyn()
         {
+            UtworzElementyMagazynu();
             UtworzPozycje();
-            UtworzElementyDodatkowe();
+            UtworzMastera();
+            MapujPalety();
+        }
+
+        public void WykonajRuch()
+        {
+            Paleta paleta = null;
+            Paleta pal = null;
+
+            foreach (var pozycja in pozycje)
+            {
+                if (pozycja.Typ == TypPozycji.Master)
+                {
+                    pozycja.WykonajRuch(out pal);
+                    if (pal != null)
+                        paleta = pal;
+                }
+            }
+
+            foreach (var pozycja in pozycje.OrderByDescending(p => p.PozycjaId).ToList())
+            {
+                if (pozycja.Typ != TypPozycji.Master)
+                {
+                    pozycja.WykonajRuch(out pal);
+                    if (pal != null)
+                        paleta = pal;
+                }
+            }
+
+            master.AktualizujPozycje(pozycje);
+            if (paleta != null)
+                master.UtworzMisjeMagazynowa(paleta);
+
+        }
+
+        public void ResetujRuch()
+        {
+            foreach (var pozycja in pozycje)
+            {
+                pozycja.ResetujRuch();
+            }
+        }
+
+        public void PokazNumeryPozycji()
+        {
+            foreach (var pozycja in pozycje)
+            {
+                pozycja.PokazNumerPozycji();
+            }
+        }
+
+        public void UkryjNumeryPozycji()
+        {
+            foreach (var pozycja in pozycje)
+            {
+                pozycja.UkryjNumerPozycji();
+            }
         }
 
         #endregion
@@ -39,6 +107,7 @@ namespace WarehouseSimulator.Symulator
 
 
         #region Private
+
         private void UtworzPozycje()
         {
             pozycje = komunikatorDb.PobierzListePozycji();
@@ -47,9 +116,21 @@ namespace WarehouseSimulator.Symulator
                 pozycja.UtworzPozycje();
                 okno.Controls.Add(pozycja.Interfejs);
             }
+
+            UtworzSasiadow();
+
         }
 
-        private void UtworzElementyDodatkowe()
+        private void UtworzSasiadow()
+        {
+            foreach (var pozycja in pozycje)
+            {
+                pozycja.UtworzSasiadow(pozycje, pozycja.Przod, pozycja.Tyl, pozycja.Lewo, pozycja.Prawo);
+                okno.Controls.Add(pozycja.Interfejs);
+            }
+        }
+
+        private void UtworzElementyMagazynu()
         {
             Bitmap[] ciezarowki = new Bitmap[4] { Resources.truck_01, Resources.truck_02, Resources.truck_03, Resources.truck_04 };
             int[] y = new int[4] { 110, 335, 614, 838 };
@@ -122,8 +203,45 @@ namespace WarehouseSimulator.Symulator
                 okno.Controls.Add(nazwaZatoki);
             }
 
+            y = new int[2] { 514, 539 };
+            for (int idx = 0; idx < 2; idx++)
+            {
+                Panel p = new Panel();
+                p.BackColor = Color.DarkBlue;
+                p.SetBounds(501, y[idx], 954, 5);
+                okno.Controls.Add(p);
+            }
 
-        }  
+        }
+
+        private void UtworzMastera()
+        {
+            master = new Master();
+            var pozycjaMastera = pozycje.FirstOrDefault(p => p.CzyMasterNaPozycji);
+            master.Pozycja = pozycjaMastera;
+            master.AktualizujPozycje(pozycje);
+            pozycjaMastera.MapujMastera(master);
+        }
+
+        private void MapujPalety()
+        {
+            var produkty = komunikatorDb.PobierzListeProduktow();
+            palety = komunikatorDb.PobierzListePalet(produkty);
+            foreach (var paleta in palety)
+            {
+                paleta.UtworzPalete();
+            }
+
+            foreach (var pozycja in pozycje)
+            {
+                if (pozycja.PaletaId.HasValue)
+                    pozycja.MapujPalete(palety.FirstOrDefault(p => p.PaletaId == pozycja.PaletaId.Value));
+            }
+        }
+
+
+
+
         #endregion
 
 

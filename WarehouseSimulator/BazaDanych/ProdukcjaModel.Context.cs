@@ -13,10 +13,10 @@ namespace WarehouseSimulator.BazaDanych
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PozycjeContext : DbContext
+    public partial class ProdukcjaContext : DbContext
     {
-        public PozycjeContext()
-            : base("name=PozycjeContext")
+        public ProdukcjaContext()
+            : base("name=ProdukcjaContext")
         {
         }
     
@@ -25,6 +25,6 @@ namespace WarehouseSimulator.BazaDanych
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Pozycje> Pozycje { get; set; }
+        public virtual DbSet<Produkty> Produkty { get; set; }
     }
 }

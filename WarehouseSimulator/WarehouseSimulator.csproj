@@ -56,23 +56,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BazaDanych\Db.cs" />
+    <Compile Include="BazaDanych\MagazynModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MagazynModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych\MagazynModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MagazynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych\MagazynModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MagazynModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych\Palety.cs">
+      <DependentUpon>MagazynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="BazaDanych\Pozycje.cs">
-      <DependentUpon>PozycjeModel.tt</DependentUpon>
+      <DependentUpon>MagazynModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BazaDanych\PozycjeModel.Context.cs">
+    <Compile Include="BazaDanych\ProdukcjaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PozycjeModel.Context.tt</DependentUpon>
+      <DependentUpon>ProdukcjaModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BazaDanych\PozycjeModel.cs">
+    <Compile Include="BazaDanych\ProdukcjaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PozycjeModel.tt</DependentUpon>
+      <DependentUpon>ProdukcjaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BazaDanych\PozycjeModel.Designer.cs">
+    <Compile Include="BazaDanych\ProdukcjaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PozycjeModel.edmx</DependentUpon>
+      <DependentUpon>ProdukcjaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych\Produkty.cs">
+      <DependentUpon>ProdukcjaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmMagazyn.cs">
       <SubType>Form</SubType>
@@ -80,11 +101,11 @@
     <Compile Include="Forms\frmMagazyn.Designer.cs">
       <DependentUpon>frmMagazyn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmOperacja.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Kontrolki\ucMaster.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\frmOperacja.Designer.cs">
-      <DependentUpon>frmOperacja.cs</DependentUpon>
+    <Compile Include="Kontrolki\ucMaster.Designer.cs">
+      <DependentUpon>ucMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontrolki\ucNazwaZatoki.cs">
       <SubType>UserControl</SubType>
@@ -105,16 +126,22 @@
       <DependentUpon>ucPozycja.cs</DependentUpon>
     </Compile>
     <Compile Include="Symulator\Enumeratory.cs" />
-    <Compile Include="Symulator\IPozycja.cs" />
-    <Compile Include="Symulator\Pozycja.cs" />
+    <Compile Include="Symulator\Master.cs" />
+    <Compile Include="Symulator\MisjaMastera.cs" />
+    <Compile Include="Symulator\Palety\Paleta.cs" />
+    <Compile Include="Symulator\Pozycje\IPozycja.cs" />
+    <Compile Include="Symulator\Pozycje\Pozycja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Symulator\Magazyn.cs" />
+    <Compile Include="Symulator\Pozycje\PozycjaKontrola.cs" />
+    <Compile Include="Symulator\Pozycje\PozycjaMaster.cs" />
+    <Compile Include="Symulator\Produkcja\Produkt.cs" />
     <EmbeddedResource Include="Forms\frmMagazyn.resx">
       <DependentUpon>frmMagazyn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmOperacja.resx">
-      <DependentUpon>frmOperacja.cs</DependentUpon>
+    <EmbeddedResource Include="Kontrolki\ucMaster.resx">
+      <DependentUpon>ucMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kontrolki\ucNazwaZatoki.resx">
       <DependentUpon>ucNazwaZatoki.cs</DependentUpon>
@@ -135,13 +162,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="BazaDanych\PozycjeModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PozycjeModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Backup\MiniSimulator.bak" />
-    <None Include="BazaDanych\PozycjeModel.edmx.diagram">
-      <DependentUpon>PozycjeModel.edmx</DependentUpon>
+    <EntityDeploy Include="BazaDanych\MagazynModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MagazynModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BazaDanych\MagazynModel.edmx.diagram">
+      <DependentUpon>MagazynModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="BazaDanych\ProdukcjaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProdukcjaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BazaDanych\ProdukcjaModel.edmx.diagram">
+      <DependentUpon>ProdukcjaModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -173,19 +207,29 @@
     <None Include="Resources\img\truck_04.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BazaDanych\PozycjeModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PozycjeModel.Context.cs</LastGenOutput>
-      <DependentUpon>PozycjeModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="BazaDanych\PozycjeModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PozycjeModel.edmx</DependentUpon>
-      <LastGenOutput>PozycjeModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="BazaDanych\MagazynModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MagazynModel.edmx</DependentUpon>
+      <LastGenOutput>MagazynModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BazaDanych\MagazynModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MagazynModel.edmx</DependentUpon>
+      <LastGenOutput>MagazynModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="BazaDanych\ProdukcjaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProdukcjaModel.edmx</DependentUpon>
+      <LastGenOutput>ProdukcjaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BazaDanych\ProdukcjaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProdukcjaModel.edmx</DependentUpon>
+      <LastGenOutput>ProdukcjaModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

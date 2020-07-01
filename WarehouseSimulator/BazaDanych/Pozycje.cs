@@ -20,5 +20,14 @@ namespace WarehouseSimulator.BazaDanych
         public int X { get; set; }
         public int Y { get; set; }
         public int TypPozycjiId { get; set; }
+        public Nullable<int> Przod { get; set; }
+        public Nullable<int> Tyl { get; set; }
+        public Nullable<int> Lewo { get; set; }
+        public Nullable<int> Prawo { get; set; }
+        public int AktualnyKierunek { get; set; }
+        public string Zatoka { get; set; }
+        public string Rampa { get; set; }
+        public Nullable<int> PaletaId { get; set; }
+        public bool CzyMasterNaPozycji { get; set; }
     }
 }

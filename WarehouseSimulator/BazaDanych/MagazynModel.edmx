@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MagazynModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Palety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KodKreskowy" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="ProduktId" Type="int" Nullable="false" />
+          <Property Name="DataProdukcji" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PartiaProdukcyjnaId" Type="int" Nullable="false" />
+          <Property Name="StanPaletyId" Type="int" Nullable="false" />
+          <Property Name="Destynacja" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Pozycje">
+          <Key>
+            <PropertyRef Name="PozycjaId" />
+          </Key>
+          <Property Name="PozycjaId" Type="int" Nullable="false" />
+          <Property Name="Szerokosc" Type="int" Nullable="false" />
+          <Property Name="Wysokosc" Type="int" Nullable="false" />
+          <Property Name="X" Type="int" Nullable="false" />
+          <Property Name="Y" Type="int" Nullable="false" />
+          <Property Name="TypPozycjiId" Type="int" Nullable="false" />
+          <Property Name="Przod" Type="int" />
+          <Property Name="Tyl" Type="int" />
+          <Property Name="Lewo" Type="int" />
+          <Property Name="Prawo" Type="int" />
+          <Property Name="AktualnyKierunek" Type="int" Nullable="false" />
+          <Property Name="Zatoka" Type="nvarchar" MaxLength="10" />
+          <Property Name="Rampa" Type="nvarchar" MaxLength="10" />
+          <Property Name="PaletaId" Type="int" />
+          <Property Name="CzyMasterNaPozycji" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MagazynModelStoreContainer">
+          <EntitySet Name="Palety" EntityType="Self.Palety" Schema="magazyn" store:Type="Tables" />
+          <EntitySet Name="Pozycje" EntityType="Self.Pozycje" Schema="magazyn" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MagazynModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Palety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KodKreskowy" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProduktId" Type="Int32" Nullable="false" />
+          <Property Name="DataProdukcji" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="PartiaProdukcyjnaId" Type="Int32" Nullable="false" />
+          <Property Name="StanPaletyId" Type="Int32" Nullable="false" />
+          <Property Name="Destynacja" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Pozycje">
+          <Key>
+            <PropertyRef Name="PozycjaId" />
+          </Key>
+          <Property Name="PozycjaId" Type="Int32" Nullable="false" />
+          <Property Name="Szerokosc" Type="Int32" Nullable="false" />
+          <Property Name="Wysokosc" Type="Int32" Nullable="false" />
+          <Property Name="X" Type="Int32" Nullable="false" />
+          <Property Name="Y" Type="Int32" Nullable="false" />
+          <Property Name="TypPozycjiId" Type="Int32" Nullable="false" />
+          <Property Name="Przod" Type="Int32" />
+          <Property Name="Tyl" Type="Int32" />
+          <Property Name="Lewo" Type="Int32" />
+          <Property Name="Prawo" Type="Int32" />
+          <Property Name="AktualnyKierunek" Type="Int32" Nullable="false" />
+          <Property Name="Zatoka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Rampa" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PaletaId" Type="Int32" />
+          <Property Name="CzyMasterNaPozycji" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MagazynContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Palety" EntityType="Self.Palety" />
+          <EntitySet Name="Pozycje" EntityType="Self.Pozycje" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MagazynModelStoreContainer" CdmEntityContainer="MagazynContext">
+          <EntitySetMapping Name="Palety">
+            <EntityTypeMapping TypeName="MagazynModel.Palety">
+              <MappingFragment StoreEntitySet="Palety">
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="KodKreskowy" ColumnName="KodKreskowy" />
+                <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
+                <ScalarProperty Name="DataProdukcji" ColumnName="DataProdukcji" />
+                <ScalarProperty Name="PartiaProdukcyjnaId" ColumnName="PartiaProdukcyjnaId" />
+                <ScalarProperty Name="StanPaletyId" ColumnName="StanPaletyId" />
+                <ScalarProperty Name="Destynacja" ColumnName="Destynacja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pozycje">
+            <EntityTypeMapping TypeName="MagazynModel.Pozycje">
+              <MappingFragment StoreEntitySet="Pozycje">
+                <ScalarProperty Name="PozycjaId" ColumnName="PozycjaId" />
+                <ScalarProperty Name="Szerokosc" ColumnName="Szerokosc" />
+                <ScalarProperty Name="Wysokosc" ColumnName="Wysokosc" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="TypPozycjiId" ColumnName="TypPozycjiId" />
+                <ScalarProperty Name="Przod" ColumnName="Przod" />
+                <ScalarProperty Name="Tyl" ColumnName="Tyl" />
+                <ScalarProperty Name="Lewo" ColumnName="Lewo" />
+                <ScalarProperty Name="Prawo" ColumnName="Prawo" />
+                <ScalarProperty Name="AktualnyKierunek" ColumnName="AktualnyKierunek" />
+                <ScalarProperty Name="Zatoka" ColumnName="Zatoka" />
+                <ScalarProperty Name="Rampa" ColumnName="Rampa" />
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="CzyMasterNaPozycji" ColumnName="CzyMasterNaPozycji" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

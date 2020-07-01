@@ -21,7 +21,8 @@ namespace WarehouseSimulator.Kontrolki
             this.SetBounds(x, y, szer, wys);
             lblNumer.BackColor = DajKolorPozycji(typ);
             lblNumer.ForeColor = DajKolorNumeruPozycji(typ);
-            lblNumer.Visible = true;
+            this.BackColor = typ == TypPozycji.Master ? Color.White : Color.Gainsboro;
+            lblNumer.Visible = false;
             if (typ == TypPozycji.Kontrola)
             {
                 lblNumer.Text = "KONTROLA";
@@ -45,8 +46,7 @@ namespace WarehouseSimulator.Kontrolki
 
         public void PokazNumerPozycji()
         {
-            if (Typ != TypPozycji.Kontrola && Typ != TypPozycji.Inspekcja && Typ != TypPozycji.Naprawa)
-                lblNumer.Visible = true;
+            lblNumer.Visible = true;
         }
 
         public void UkryjNumerPozycji()
