@@ -57,7 +57,9 @@ namespace Simulator.Helpers
         Master = 10,
         Battery = 11,
         Cross = 12,
-        Ramp = 13
+        Ramp = 13,
+        MainEnter = 14,
+        RampEnter = 15
     }
 
     public enum PositionDirection

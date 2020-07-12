@@ -116,24 +116,50 @@ namespace Simulator.Database
                     result = new PosProduction(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type, 
                         db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
                     break;
-                case PositionType.WarehouseEnter:
                 case PositionType.LiftEnter:
+                    result = new PosLiftEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Lift:
+                    result = new PosLift(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Control:
                     result = new PosControl(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
                     break;
+                case PositionType.MainEnter:
+                    result = new PosMainEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Repair:
+                    result = new PosRepair(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Inspection:
-                case PositionType.Warehouse:
-                case PositionType.Master:
-                case PositionType.Battery:
+                    result = new PosInspection(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                      db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Cross:
+                    result = new PosCross(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                     db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Ramp:
+                    result = new PosRamp(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
+                case PositionType.RampEnter:
+                    result = new PosRampEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Standard:
                     result = new PosStandard(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                         db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
-                    break;       
+                    break;
+                case PositionType.WarehouseEnter:
+                case PositionType.Warehouse:
+                case PositionType.Master:
+                case PositionType.Battery:
                 default:
                     result = new PosStandard(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                         db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);

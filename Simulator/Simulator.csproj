@@ -144,7 +144,15 @@
     <Compile Include="WarehouseData\Pallet.cs" />
     <Compile Include="WarehouseData\Position.cs" />
     <Compile Include="WarehouseData\Positions\PosControl.cs" />
+    <Compile Include="WarehouseData\Positions\PosCross.cs" />
+    <Compile Include="WarehouseData\Positions\PosInspection.cs" />
+    <Compile Include="WarehouseData\Positions\PosLift.cs" />
+    <Compile Include="WarehouseData\Positions\PosLiftEnter.cs" />
+    <Compile Include="WarehouseData\Positions\PosMainEnter.cs" />
     <Compile Include="WarehouseData\Positions\PosProduction.cs" />
+    <Compile Include="WarehouseData\Positions\PosRamp.cs" />
+    <Compile Include="WarehouseData\Positions\PosRampEnter.cs" />
+    <Compile Include="WarehouseData\Positions\PosRepair.cs" />
     <Compile Include="WarehouseData\Positions\PosStandard.cs" />
     <Compile Include="WarehouseData\Warehouse.cs" />
     <EmbeddedResource Include="Controls\ucButton.resx">
@@ -185,6 +193,7 @@
     <None Include="Database\SimulatorModel.edmx.diagram">
       <DependentUpon>SimulatorModel.edmx</DependentUpon>
     </None>
+    <None Include="Database\WarehouseSim.bak" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

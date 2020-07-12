@@ -33,8 +33,10 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produkcjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mitCreateBatch = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numeryPozycjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitShowNumbers = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitHideNumbers = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -58,24 +60,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel519 = new System.Windows.Forms.Panel();
-            this.panel602 = new System.Windows.Forms.Panel();
-            this.panel603 = new System.Windows.Forms.Panel();
-            this.panel518 = new System.Windows.Forms.Panel();
-            this.panel501 = new System.Windows.Forms.Panel();
-            this.panel502 = new System.Windows.Forms.Panel();
-            this.panel503 = new System.Windows.Forms.Panel();
-            this.panel504 = new System.Windows.Forms.Panel();
-            this.panel505 = new System.Windows.Forms.Panel();
-            this.panel517 = new System.Windows.Forms.Panel();
-            this.panel592 = new System.Windows.Forms.Panel();
-            this.panel600 = new System.Windows.Forms.Panel();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.panel88 = new System.Windows.Forms.Panel();
-            this.panel109 = new System.Windows.Forms.Panel();
-            this.panel130 = new System.Windows.Forms.Panel();
-            this.panel151 = new System.Windows.Forms.Panel();
-            this.panel591 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -130,54 +114,6 @@
             this.panel1077 = new System.Windows.Forms.Panel();
             this.panel1078 = new System.Windows.Forms.Panel();
             this.panel1079 = new System.Windows.Forms.Panel();
-            this.panel594 = new System.Windows.Forms.Panel();
-            this.panel595 = new System.Windows.Forms.Panel();
-            this.panel593 = new System.Windows.Forms.Panel();
-            this.panel520 = new System.Windows.Forms.Panel();
-            this.panel521 = new System.Windows.Forms.Panel();
-            this.panel522 = new System.Windows.Forms.Panel();
-            this.panel523 = new System.Windows.Forms.Panel();
-            this.panel524 = new System.Windows.Forms.Panel();
-            this.panel525 = new System.Windows.Forms.Panel();
-            this.panel526 = new System.Windows.Forms.Panel();
-            this.panel527 = new System.Windows.Forms.Panel();
-            this.panel528 = new System.Windows.Forms.Panel();
-            this.panel529 = new System.Windows.Forms.Panel();
-            this.panel516 = new System.Windows.Forms.Panel();
-            this.panel512 = new System.Windows.Forms.Panel();
-            this.panel513 = new System.Windows.Forms.Panel();
-            this.panel514 = new System.Windows.Forms.Panel();
-            this.panel515 = new System.Windows.Forms.Panel();
-            this.panel508 = new System.Windows.Forms.Panel();
-            this.panel509 = new System.Windows.Forms.Panel();
-            this.panel510 = new System.Windows.Forms.Panel();
-            this.panel511 = new System.Windows.Forms.Panel();
-            this.panel506 = new System.Windows.Forms.Panel();
-            this.panel507 = new System.Windows.Forms.Panel();
-            this.panel497 = new System.Windows.Forms.Panel();
-            this.panel498 = new System.Windows.Forms.Panel();
-            this.panel499 = new System.Windows.Forms.Panel();
-            this.panel500 = new System.Windows.Forms.Panel();
-            this.panel493 = new System.Windows.Forms.Panel();
-            this.panel494 = new System.Windows.Forms.Panel();
-            this.panel495 = new System.Windows.Forms.Panel();
-            this.panel496 = new System.Windows.Forms.Panel();
-            this.panel487 = new System.Windows.Forms.Panel();
-            this.panel488 = new System.Windows.Forms.Panel();
-            this.panel489 = new System.Windows.Forms.Panel();
-            this.panel490 = new System.Windows.Forms.Panel();
-            this.panel491 = new System.Windows.Forms.Panel();
-            this.panel492 = new System.Windows.Forms.Panel();
-            this.panel485 = new System.Windows.Forms.Panel();
-            this.panel486 = new System.Windows.Forms.Panel();
-            this.panel483 = new System.Windows.Forms.Panel();
-            this.panel480 = new System.Windows.Forms.Panel();
-            this.panel481 = new System.Windows.Forms.Panel();
-            this.panel482 = new System.Windows.Forms.Panel();
-            this.panel470 = new System.Windows.Forms.Panel();
-            this.panel475 = new System.Windows.Forms.Panel();
-            this.panel473 = new System.Windows.Forms.Panel();
-            this.panel474 = new System.Windows.Forms.Panel();
             this.panel360 = new System.Windows.Forms.Panel();
             this.panel361 = new System.Windows.Forms.Panel();
             this.panel362 = new System.Windows.Forms.Panel();
@@ -485,11 +421,6 @@
             this.panel181 = new System.Windows.Forms.Panel();
             this.panel182 = new System.Windows.Forms.Panel();
             this.panel183 = new System.Windows.Forms.Panel();
-            this.panel160 = new System.Windows.Forms.Panel();
-            this.panel159 = new System.Windows.Forms.Panel();
-            this.panel158 = new System.Windows.Forms.Panel();
-            this.panel137 = new System.Windows.Forms.Panel();
-            this.panel138 = new System.Windows.Forms.Panel();
             this.panel139 = new System.Windows.Forms.Panel();
             this.panel140 = new System.Windows.Forms.Panel();
             this.panel141 = new System.Windows.Forms.Panel();
@@ -508,8 +439,6 @@
             this.panel155 = new System.Windows.Forms.Panel();
             this.panel156 = new System.Windows.Forms.Panel();
             this.panel157 = new System.Windows.Forms.Panel();
-            this.panel116 = new System.Windows.Forms.Panel();
-            this.panel117 = new System.Windows.Forms.Panel();
             this.panel118 = new System.Windows.Forms.Panel();
             this.panel119 = new System.Windows.Forms.Panel();
             this.panel120 = new System.Windows.Forms.Panel();
@@ -528,28 +457,17 @@
             this.panel134 = new System.Windows.Forms.Panel();
             this.panel135 = new System.Windows.Forms.Panel();
             this.panel136 = new System.Windows.Forms.Panel();
-            this.panel95 = new System.Windows.Forms.Panel();
-            this.panel96 = new System.Windows.Forms.Panel();
             this.panel97 = new System.Windows.Forms.Panel();
             this.panel98 = new System.Windows.Forms.Panel();
-            this.panel99 = new System.Windows.Forms.Panel();
-            this.panel100 = new System.Windows.Forms.Panel();
-            this.panel101 = new System.Windows.Forms.Panel();
             this.panel102 = new System.Windows.Forms.Panel();
             this.panel103 = new System.Windows.Forms.Panel();
             this.panel104 = new System.Windows.Forms.Panel();
-            this.panel105 = new System.Windows.Forms.Panel();
             this.panel106 = new System.Windows.Forms.Panel();
-            this.panel107 = new System.Windows.Forms.Panel();
             this.panel108 = new System.Windows.Forms.Panel();
             this.panel110 = new System.Windows.Forms.Panel();
             this.panel111 = new System.Windows.Forms.Panel();
-            this.panel112 = new System.Windows.Forms.Panel();
             this.panel113 = new System.Windows.Forms.Panel();
-            this.panel114 = new System.Windows.Forms.Panel();
             this.panel115 = new System.Windows.Forms.Panel();
-            this.panel74 = new System.Windows.Forms.Panel();
-            this.panel75 = new System.Windows.Forms.Panel();
             this.panel76 = new System.Windows.Forms.Panel();
             this.panel77 = new System.Windows.Forms.Panel();
             this.panel78 = new System.Windows.Forms.Panel();
@@ -568,19 +486,6 @@
             this.panel92 = new System.Windows.Forms.Panel();
             this.panel93 = new System.Windows.Forms.Panel();
             this.panel94 = new System.Windows.Forms.Panel();
-            this.panel73 = new System.Windows.Forms.Panel();
-            this.panel70 = new System.Windows.Forms.Panel();
-            this.panel71 = new System.Windows.Forms.Panel();
-            this.panel72 = new System.Windows.Forms.Panel();
-            this.panel67 = new System.Windows.Forms.Panel();
-            this.panel68 = new System.Windows.Forms.Panel();
-            this.panel69 = new System.Windows.Forms.Panel();
-            this.panel64 = new System.Windows.Forms.Panel();
-            this.panel65 = new System.Windows.Forms.Panel();
-            this.panel66 = new System.Windows.Forms.Panel();
-            this.panel61 = new System.Windows.Forms.Panel();
-            this.panel62 = new System.Windows.Forms.Panel();
-            this.panel63 = new System.Windows.Forms.Panel();
             this.tabLevel1 = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -1060,16 +965,8 @@
             this.panel582 = new System.Windows.Forms.Panel();
             this.panel584 = new System.Windows.Forms.Panel();
             this.panel586 = new System.Windows.Forms.Panel();
-            this.panel478 = new System.Windows.Forms.Panel();
-            this.panel476 = new System.Windows.Forms.Panel();
-            this.panel477 = new System.Windows.Forms.Panel();
             this.panInfo = new System.Windows.Forms.Panel();
-            this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.numeryPozycjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitShowNumbers = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitHideNumbers = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabLevel0.SuspendLayout();
@@ -1081,8 +978,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel594.SuspendLayout();
-            this.panel506.SuspendLayout();
             this.panel361.SuspendLayout();
             this.panel383.SuspendLayout();
             this.panel405.SuspendLayout();
@@ -1119,7 +1014,6 @@
             this.panel629.SuspendLayout();
             this.panel607.SuspendLayout();
             this.panel570.SuspendLayout();
-            this.panel476.SuspendLayout();
             this.panInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1156,22 +1050,37 @@
             this.mitCreateBatch.Text = "Utwórz partię produkcyjną";
             this.mitCreateBatch.Click += new System.EventHandler(this.mitCreateBatch_Click);
             // 
-            // panel2
+            // ustawieniaToolStripMenuItem
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(327, 510);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(45, 66);
-            this.panel2.TabIndex = 2;
+            this.ustawieniaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.numeryPozycjiToolStripMenuItem});
+            this.ustawieniaToolStripMenuItem.Name = "ustawieniaToolStripMenuItem";
+            this.ustawieniaToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.ustawieniaToolStripMenuItem.Text = "Ustawienia";
             // 
-            // panel3
+            // numeryPozycjiToolStripMenuItem
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(10, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(25, 25);
-            this.panel3.TabIndex = 3;
+            this.numeryPozycjiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mitShowNumbers,
+            this.mitHideNumbers});
+            this.numeryPozycjiToolStripMenuItem.Name = "numeryPozycjiToolStripMenuItem";
+            this.numeryPozycjiToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.numeryPozycjiToolStripMenuItem.Text = "Numery pozycji";
+            // 
+            // mitShowNumbers
+            // 
+            this.mitShowNumbers.Name = "mitShowNumbers";
+            this.mitShowNumbers.Size = new System.Drawing.Size(105, 22);
+            this.mitShowNumbers.Text = "Pokaż";
+            this.mitShowNumbers.Click += new System.EventHandler(this.mitShowNumbers_Click);
+            // 
+            // mitHideNumbers
+            // 
+            this.mitHideNumbers.Enabled = false;
+            this.mitHideNumbers.Name = "mitHideNumbers";
+            this.mitHideNumbers.Size = new System.Drawing.Size(105, 22);
+            this.mitHideNumbers.Text = "Ukryj";
+            this.mitHideNumbers.Click += new System.EventHandler(this.mitHideNumbers_Click);
             // 
             // panel4
             // 
@@ -1292,24 +1201,6 @@
             this.tabLevel0.Controls.Add(this.pictureBox8);
             this.tabLevel0.Controls.Add(this.pictureBox7);
             this.tabLevel0.Controls.Add(this.pictureBox6);
-            this.tabLevel0.Controls.Add(this.panel519);
-            this.tabLevel0.Controls.Add(this.panel602);
-            this.tabLevel0.Controls.Add(this.panel603);
-            this.tabLevel0.Controls.Add(this.panel518);
-            this.tabLevel0.Controls.Add(this.panel501);
-            this.tabLevel0.Controls.Add(this.panel502);
-            this.tabLevel0.Controls.Add(this.panel503);
-            this.tabLevel0.Controls.Add(this.panel504);
-            this.tabLevel0.Controls.Add(this.panel505);
-            this.tabLevel0.Controls.Add(this.panel517);
-            this.tabLevel0.Controls.Add(this.panel592);
-            this.tabLevel0.Controls.Add(this.panel600);
-            this.tabLevel0.Controls.Add(this.panel31);
-            this.tabLevel0.Controls.Add(this.panel88);
-            this.tabLevel0.Controls.Add(this.panel109);
-            this.tabLevel0.Controls.Add(this.panel130);
-            this.tabLevel0.Controls.Add(this.panel151);
-            this.tabLevel0.Controls.Add(this.panel591);
             this.tabLevel0.Controls.Add(this.pictureBox5);
             this.tabLevel0.Controls.Add(this.pictureBox4);
             this.tabLevel0.Controls.Add(this.pictureBox3);
@@ -1364,52 +1255,6 @@
             this.tabLevel0.Controls.Add(this.panel1077);
             this.tabLevel0.Controls.Add(this.panel1078);
             this.tabLevel0.Controls.Add(this.panel1079);
-            this.tabLevel0.Controls.Add(this.panel594);
-            this.tabLevel0.Controls.Add(this.panel593);
-            this.tabLevel0.Controls.Add(this.panel520);
-            this.tabLevel0.Controls.Add(this.panel521);
-            this.tabLevel0.Controls.Add(this.panel522);
-            this.tabLevel0.Controls.Add(this.panel523);
-            this.tabLevel0.Controls.Add(this.panel524);
-            this.tabLevel0.Controls.Add(this.panel525);
-            this.tabLevel0.Controls.Add(this.panel526);
-            this.tabLevel0.Controls.Add(this.panel527);
-            this.tabLevel0.Controls.Add(this.panel528);
-            this.tabLevel0.Controls.Add(this.panel529);
-            this.tabLevel0.Controls.Add(this.panel516);
-            this.tabLevel0.Controls.Add(this.panel512);
-            this.tabLevel0.Controls.Add(this.panel513);
-            this.tabLevel0.Controls.Add(this.panel514);
-            this.tabLevel0.Controls.Add(this.panel515);
-            this.tabLevel0.Controls.Add(this.panel508);
-            this.tabLevel0.Controls.Add(this.panel509);
-            this.tabLevel0.Controls.Add(this.panel510);
-            this.tabLevel0.Controls.Add(this.panel511);
-            this.tabLevel0.Controls.Add(this.panel506);
-            this.tabLevel0.Controls.Add(this.panel497);
-            this.tabLevel0.Controls.Add(this.panel498);
-            this.tabLevel0.Controls.Add(this.panel499);
-            this.tabLevel0.Controls.Add(this.panel500);
-            this.tabLevel0.Controls.Add(this.panel493);
-            this.tabLevel0.Controls.Add(this.panel494);
-            this.tabLevel0.Controls.Add(this.panel495);
-            this.tabLevel0.Controls.Add(this.panel496);
-            this.tabLevel0.Controls.Add(this.panel487);
-            this.tabLevel0.Controls.Add(this.panel488);
-            this.tabLevel0.Controls.Add(this.panel489);
-            this.tabLevel0.Controls.Add(this.panel490);
-            this.tabLevel0.Controls.Add(this.panel491);
-            this.tabLevel0.Controls.Add(this.panel492);
-            this.tabLevel0.Controls.Add(this.panel485);
-            this.tabLevel0.Controls.Add(this.panel486);
-            this.tabLevel0.Controls.Add(this.panel483);
-            this.tabLevel0.Controls.Add(this.panel480);
-            this.tabLevel0.Controls.Add(this.panel481);
-            this.tabLevel0.Controls.Add(this.panel482);
-            this.tabLevel0.Controls.Add(this.panel470);
-            this.tabLevel0.Controls.Add(this.panel475);
-            this.tabLevel0.Controls.Add(this.panel473);
-            this.tabLevel0.Controls.Add(this.panel474);
             this.tabLevel0.Controls.Add(this.panel360);
             this.tabLevel0.Controls.Add(this.panel361);
             this.tabLevel0.Controls.Add(this.panel363);
@@ -1703,11 +1548,6 @@
             this.tabLevel0.Controls.Add(this.panel181);
             this.tabLevel0.Controls.Add(this.panel182);
             this.tabLevel0.Controls.Add(this.panel183);
-            this.tabLevel0.Controls.Add(this.panel160);
-            this.tabLevel0.Controls.Add(this.panel159);
-            this.tabLevel0.Controls.Add(this.panel158);
-            this.tabLevel0.Controls.Add(this.panel137);
-            this.tabLevel0.Controls.Add(this.panel138);
             this.tabLevel0.Controls.Add(this.panel139);
             this.tabLevel0.Controls.Add(this.panel140);
             this.tabLevel0.Controls.Add(this.panel141);
@@ -1726,8 +1566,6 @@
             this.tabLevel0.Controls.Add(this.panel155);
             this.tabLevel0.Controls.Add(this.panel156);
             this.tabLevel0.Controls.Add(this.panel157);
-            this.tabLevel0.Controls.Add(this.panel116);
-            this.tabLevel0.Controls.Add(this.panel117);
             this.tabLevel0.Controls.Add(this.panel118);
             this.tabLevel0.Controls.Add(this.panel119);
             this.tabLevel0.Controls.Add(this.panel120);
@@ -1746,28 +1584,17 @@
             this.tabLevel0.Controls.Add(this.panel134);
             this.tabLevel0.Controls.Add(this.panel135);
             this.tabLevel0.Controls.Add(this.panel136);
-            this.tabLevel0.Controls.Add(this.panel95);
-            this.tabLevel0.Controls.Add(this.panel96);
             this.tabLevel0.Controls.Add(this.panel97);
             this.tabLevel0.Controls.Add(this.panel98);
-            this.tabLevel0.Controls.Add(this.panel99);
-            this.tabLevel0.Controls.Add(this.panel100);
-            this.tabLevel0.Controls.Add(this.panel101);
             this.tabLevel0.Controls.Add(this.panel102);
             this.tabLevel0.Controls.Add(this.panel103);
             this.tabLevel0.Controls.Add(this.panel104);
-            this.tabLevel0.Controls.Add(this.panel105);
             this.tabLevel0.Controls.Add(this.panel106);
-            this.tabLevel0.Controls.Add(this.panel107);
             this.tabLevel0.Controls.Add(this.panel108);
             this.tabLevel0.Controls.Add(this.panel110);
             this.tabLevel0.Controls.Add(this.panel111);
-            this.tabLevel0.Controls.Add(this.panel112);
             this.tabLevel0.Controls.Add(this.panel113);
-            this.tabLevel0.Controls.Add(this.panel114);
             this.tabLevel0.Controls.Add(this.panel115);
-            this.tabLevel0.Controls.Add(this.panel74);
-            this.tabLevel0.Controls.Add(this.panel75);
             this.tabLevel0.Controls.Add(this.panel76);
             this.tabLevel0.Controls.Add(this.panel77);
             this.tabLevel0.Controls.Add(this.panel78);
@@ -1786,21 +1613,7 @@
             this.tabLevel0.Controls.Add(this.panel92);
             this.tabLevel0.Controls.Add(this.panel93);
             this.tabLevel0.Controls.Add(this.panel94);
-            this.tabLevel0.Controls.Add(this.panel73);
-            this.tabLevel0.Controls.Add(this.panel70);
-            this.tabLevel0.Controls.Add(this.panel71);
-            this.tabLevel0.Controls.Add(this.panel72);
-            this.tabLevel0.Controls.Add(this.panel67);
-            this.tabLevel0.Controls.Add(this.panel68);
-            this.tabLevel0.Controls.Add(this.panel69);
-            this.tabLevel0.Controls.Add(this.panel64);
-            this.tabLevel0.Controls.Add(this.panel65);
-            this.tabLevel0.Controls.Add(this.panel66);
-            this.tabLevel0.Controls.Add(this.panel61);
-            this.tabLevel0.Controls.Add(this.panel62);
-            this.tabLevel0.Controls.Add(this.panel63);
             this.tabLevel0.Controls.Add(this.panel4);
-            this.tabLevel0.Controls.Add(this.panel2);
             this.tabLevel0.Controls.Add(this.panel15);
             this.tabLevel0.Controls.Add(this.panel16);
             this.tabLevel0.Controls.Add(this.panel17);
@@ -1894,150 +1707,6 @@
             this.pictureBox6.Size = new System.Drawing.Size(45, 46);
             this.pictureBox6.TabIndex = 984;
             this.pictureBox6.TabStop = false;
-            // 
-            // panel519
-            // 
-            this.panel519.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel519.Location = new System.Drawing.Point(37, 747);
-            this.panel519.Name = "panel519";
-            this.panel519.Size = new System.Drawing.Size(25, 25);
-            this.panel519.TabIndex = 982;
-            // 
-            // panel602
-            // 
-            this.panel602.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel602.Location = new System.Drawing.Point(37, 933);
-            this.panel602.Name = "panel602";
-            this.panel602.Size = new System.Drawing.Size(25, 25);
-            this.panel602.TabIndex = 979;
-            // 
-            // panel603
-            // 
-            this.panel603.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel603.Location = new System.Drawing.Point(68, 933);
-            this.panel603.Name = "panel603";
-            this.panel603.Size = new System.Drawing.Size(25, 25);
-            this.panel603.TabIndex = 978;
-            // 
-            // panel518
-            // 
-            this.panel518.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel518.Location = new System.Drawing.Point(286, 933);
-            this.panel518.Name = "panel518";
-            this.panel518.Size = new System.Drawing.Size(25, 25);
-            this.panel518.TabIndex = 977;
-            // 
-            // panel501
-            // 
-            this.panel501.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel501.Location = new System.Drawing.Point(100, 933);
-            this.panel501.Name = "panel501";
-            this.panel501.Size = new System.Drawing.Size(25, 25);
-            this.panel501.TabIndex = 976;
-            // 
-            // panel502
-            // 
-            this.panel502.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel502.Location = new System.Drawing.Point(131, 933);
-            this.panel502.Name = "panel502";
-            this.panel502.Size = new System.Drawing.Size(25, 25);
-            this.panel502.TabIndex = 975;
-            // 
-            // panel503
-            // 
-            this.panel503.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel503.Location = new System.Drawing.Point(162, 933);
-            this.panel503.Name = "panel503";
-            this.panel503.Size = new System.Drawing.Size(25, 25);
-            this.panel503.TabIndex = 974;
-            // 
-            // panel504
-            // 
-            this.panel504.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel504.Location = new System.Drawing.Point(193, 933);
-            this.panel504.Name = "panel504";
-            this.panel504.Size = new System.Drawing.Size(25, 25);
-            this.panel504.TabIndex = 973;
-            // 
-            // panel505
-            // 
-            this.panel505.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel505.Location = new System.Drawing.Point(224, 933);
-            this.panel505.Name = "panel505";
-            this.panel505.Size = new System.Drawing.Size(25, 25);
-            this.panel505.TabIndex = 972;
-            // 
-            // panel517
-            // 
-            this.panel517.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel517.Location = new System.Drawing.Point(255, 933);
-            this.panel517.Name = "panel517";
-            this.panel517.Size = new System.Drawing.Size(25, 25);
-            this.panel517.TabIndex = 971;
-            // 
-            // panel592
-            // 
-            this.panel592.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel592.Location = new System.Drawing.Point(59, 117);
-            this.panel592.Name = "panel592";
-            this.panel592.Size = new System.Drawing.Size(25, 25);
-            this.panel592.TabIndex = 967;
-            // 
-            // panel600
-            // 
-            this.panel600.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel600.Location = new System.Drawing.Point(90, 118);
-            this.panel600.Name = "panel600";
-            this.panel600.Size = new System.Drawing.Size(25, 25);
-            this.panel600.TabIndex = 966;
-            // 
-            // panel31
-            // 
-            this.panel31.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel31.Location = new System.Drawing.Point(152, 118);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(25, 25);
-            this.panel31.TabIndex = 965;
-            // 
-            // panel88
-            // 
-            this.panel88.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel88.Location = new System.Drawing.Point(183, 118);
-            this.panel88.Name = "panel88";
-            this.panel88.Size = new System.Drawing.Size(25, 25);
-            this.panel88.TabIndex = 964;
-            // 
-            // panel109
-            // 
-            this.panel109.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel109.Location = new System.Drawing.Point(214, 118);
-            this.panel109.Name = "panel109";
-            this.panel109.Size = new System.Drawing.Size(25, 25);
-            this.panel109.TabIndex = 963;
-            // 
-            // panel130
-            // 
-            this.panel130.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel130.Location = new System.Drawing.Point(245, 118);
-            this.panel130.Name = "panel130";
-            this.panel130.Size = new System.Drawing.Size(25, 25);
-            this.panel130.TabIndex = 962;
-            // 
-            // panel151
-            // 
-            this.panel151.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel151.Location = new System.Drawing.Point(276, 118);
-            this.panel151.Name = "panel151";
-            this.panel151.Size = new System.Drawing.Size(25, 25);
-            this.panel151.TabIndex = 961;
-            // 
-            // panel591
-            // 
-            this.panel591.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel591.Location = new System.Drawing.Point(121, 118);
-            this.panel591.Name = "panel591";
-            this.panel591.Size = new System.Drawing.Size(25, 25);
-            this.panel591.TabIndex = 960;
             // 
             // pictureBox5
             // 
@@ -2503,392 +2172,6 @@
             this.panel1079.Name = "panel1079";
             this.panel1079.Size = new System.Drawing.Size(25, 50);
             this.panel1079.TabIndex = 894;
-            // 
-            // panel594
-            // 
-            this.panel594.BackColor = System.Drawing.Color.Gray;
-            this.panel594.Controls.Add(this.panel595);
-            this.panel594.Location = new System.Drawing.Point(307, 118);
-            this.panel594.Name = "panel594";
-            this.panel594.Size = new System.Drawing.Size(65, 45);
-            this.panel594.TabIndex = 559;
-            // 
-            // panel595
-            // 
-            this.panel595.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel595.Location = new System.Drawing.Point(10, 10);
-            this.panel595.Name = "panel595";
-            this.panel595.Size = new System.Drawing.Size(25, 25);
-            this.panel595.TabIndex = 3;
-            // 
-            // panel593
-            // 
-            this.panel593.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel593.Location = new System.Drawing.Point(337, 169);
-            this.panel593.Name = "panel593";
-            this.panel593.Size = new System.Drawing.Size(25, 25);
-            this.panel593.TabIndex = 558;
-            // 
-            // panel520
-            // 
-            this.panel520.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel520.Location = new System.Drawing.Point(337, 200);
-            this.panel520.Name = "panel520";
-            this.panel520.Size = new System.Drawing.Size(25, 25);
-            this.panel520.TabIndex = 502;
-            // 
-            // panel521
-            // 
-            this.panel521.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel521.Location = new System.Drawing.Point(337, 231);
-            this.panel521.Name = "panel521";
-            this.panel521.Size = new System.Drawing.Size(25, 25);
-            this.panel521.TabIndex = 503;
-            // 
-            // panel522
-            // 
-            this.panel522.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel522.Location = new System.Drawing.Point(337, 262);
-            this.panel522.Name = "panel522";
-            this.panel522.Size = new System.Drawing.Size(25, 25);
-            this.panel522.TabIndex = 504;
-            // 
-            // panel523
-            // 
-            this.panel523.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel523.Location = new System.Drawing.Point(337, 293);
-            this.panel523.Name = "panel523";
-            this.panel523.Size = new System.Drawing.Size(25, 25);
-            this.panel523.TabIndex = 505;
-            // 
-            // panel524
-            // 
-            this.panel524.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel524.Location = new System.Drawing.Point(337, 324);
-            this.panel524.Name = "panel524";
-            this.panel524.Size = new System.Drawing.Size(25, 25);
-            this.panel524.TabIndex = 506;
-            // 
-            // panel525
-            // 
-            this.panel525.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel525.Location = new System.Drawing.Point(337, 355);
-            this.panel525.Name = "panel525";
-            this.panel525.Size = new System.Drawing.Size(25, 25);
-            this.panel525.TabIndex = 507;
-            // 
-            // panel526
-            // 
-            this.panel526.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel526.Location = new System.Drawing.Point(337, 386);
-            this.panel526.Name = "panel526";
-            this.panel526.Size = new System.Drawing.Size(25, 25);
-            this.panel526.TabIndex = 508;
-            // 
-            // panel527
-            // 
-            this.panel527.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel527.Location = new System.Drawing.Point(337, 417);
-            this.panel527.Name = "panel527";
-            this.panel527.Size = new System.Drawing.Size(25, 25);
-            this.panel527.TabIndex = 509;
-            // 
-            // panel528
-            // 
-            this.panel528.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel528.Location = new System.Drawing.Point(337, 448);
-            this.panel528.Name = "panel528";
-            this.panel528.Size = new System.Drawing.Size(25, 25);
-            this.panel528.TabIndex = 510;
-            // 
-            // panel529
-            // 
-            this.panel529.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel529.Location = new System.Drawing.Point(337, 479);
-            this.panel529.Name = "panel529";
-            this.panel529.Size = new System.Drawing.Size(25, 25);
-            this.panel529.TabIndex = 511;
-            // 
-            // panel516
-            // 
-            this.panel516.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel516.Location = new System.Drawing.Point(37, 902);
-            this.panel516.Name = "panel516";
-            this.panel516.Size = new System.Drawing.Size(25, 25);
-            this.panel516.TabIndex = 499;
-            // 
-            // panel512
-            // 
-            this.panel512.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel512.Location = new System.Drawing.Point(37, 840);
-            this.panel512.Name = "panel512";
-            this.panel512.Size = new System.Drawing.Size(25, 25);
-            this.panel512.TabIndex = 497;
-            // 
-            // panel513
-            // 
-            this.panel513.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel513.Location = new System.Drawing.Point(37, 871);
-            this.panel513.Name = "panel513";
-            this.panel513.Size = new System.Drawing.Size(25, 25);
-            this.panel513.TabIndex = 496;
-            // 
-            // panel514
-            // 
-            this.panel514.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel514.Location = new System.Drawing.Point(37, 778);
-            this.panel514.Name = "panel514";
-            this.panel514.Size = new System.Drawing.Size(25, 25);
-            this.panel514.TabIndex = 495;
-            // 
-            // panel515
-            // 
-            this.panel515.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel515.Location = new System.Drawing.Point(37, 809);
-            this.panel515.Name = "panel515";
-            this.panel515.Size = new System.Drawing.Size(25, 25);
-            this.panel515.TabIndex = 494;
-            // 
-            // panel508
-            // 
-            this.panel508.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel508.Location = new System.Drawing.Point(28, 613);
-            this.panel508.Name = "panel508";
-            this.panel508.Size = new System.Drawing.Size(25, 25);
-            this.panel508.TabIndex = 493;
-            // 
-            // panel509
-            // 
-            this.panel509.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel509.Location = new System.Drawing.Point(28, 644);
-            this.panel509.Name = "panel509";
-            this.panel509.Size = new System.Drawing.Size(25, 25);
-            this.panel509.TabIndex = 492;
-            // 
-            // panel510
-            // 
-            this.panel510.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel510.Location = new System.Drawing.Point(28, 551);
-            this.panel510.Name = "panel510";
-            this.panel510.Size = new System.Drawing.Size(25, 25);
-            this.panel510.TabIndex = 491;
-            // 
-            // panel511
-            // 
-            this.panel511.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel511.Location = new System.Drawing.Point(28, 582);
-            this.panel511.Name = "panel511";
-            this.panel511.Size = new System.Drawing.Size(25, 25);
-            this.panel511.TabIndex = 490;
-            // 
-            // panel506
-            // 
-            this.panel506.BackColor = System.Drawing.Color.Gray;
-            this.panel506.Controls.Add(this.panel507);
-            this.panel506.Location = new System.Drawing.Point(18, 675);
-            this.panel506.Name = "panel506";
-            this.panel506.Size = new System.Drawing.Size(45, 66);
-            this.panel506.TabIndex = 489;
-            // 
-            // panel507
-            // 
-            this.panel507.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel507.Location = new System.Drawing.Point(10, 10);
-            this.panel507.Name = "panel507";
-            this.panel507.Size = new System.Drawing.Size(25, 25);
-            this.panel507.TabIndex = 3;
-            // 
-            // panel497
-            // 
-            this.panel497.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel497.Location = new System.Drawing.Point(286, 871);
-            this.panel497.Name = "panel497";
-            this.panel497.Size = new System.Drawing.Size(25, 25);
-            this.panel497.TabIndex = 483;
-            // 
-            // panel498
-            // 
-            this.panel498.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel498.Location = new System.Drawing.Point(286, 902);
-            this.panel498.Name = "panel498";
-            this.panel498.Size = new System.Drawing.Size(25, 25);
-            this.panel498.TabIndex = 482;
-            // 
-            // panel499
-            // 
-            this.panel499.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel499.Location = new System.Drawing.Point(286, 809);
-            this.panel499.Name = "panel499";
-            this.panel499.Size = new System.Drawing.Size(25, 25);
-            this.panel499.TabIndex = 481;
-            // 
-            // panel500
-            // 
-            this.panel500.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel500.Location = new System.Drawing.Point(286, 840);
-            this.panel500.Name = "panel500";
-            this.panel500.Size = new System.Drawing.Size(25, 25);
-            this.panel500.TabIndex = 480;
-            // 
-            // panel493
-            // 
-            this.panel493.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel493.Location = new System.Drawing.Point(286, 747);
-            this.panel493.Name = "panel493";
-            this.panel493.Size = new System.Drawing.Size(25, 25);
-            this.panel493.TabIndex = 479;
-            // 
-            // panel494
-            // 
-            this.panel494.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel494.Location = new System.Drawing.Point(286, 778);
-            this.panel494.Name = "panel494";
-            this.panel494.Size = new System.Drawing.Size(25, 25);
-            this.panel494.TabIndex = 478;
-            // 
-            // panel495
-            // 
-            this.panel495.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel495.Location = new System.Drawing.Point(286, 685);
-            this.panel495.Name = "panel495";
-            this.panel495.Size = new System.Drawing.Size(25, 25);
-            this.panel495.TabIndex = 477;
-            // 
-            // panel496
-            // 
-            this.panel496.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel496.Location = new System.Drawing.Point(286, 716);
-            this.panel496.Name = "panel496";
-            this.panel496.Size = new System.Drawing.Size(25, 25);
-            this.panel496.TabIndex = 476;
-            // 
-            // panel487
-            // 
-            this.panel487.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel487.Location = new System.Drawing.Point(131, 654);
-            this.panel487.Name = "panel487";
-            this.panel487.Size = new System.Drawing.Size(25, 25);
-            this.panel487.TabIndex = 475;
-            // 
-            // panel488
-            // 
-            this.panel488.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel488.Location = new System.Drawing.Point(162, 654);
-            this.panel488.Name = "panel488";
-            this.panel488.Size = new System.Drawing.Size(25, 25);
-            this.panel488.TabIndex = 474;
-            // 
-            // panel489
-            // 
-            this.panel489.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel489.Location = new System.Drawing.Point(193, 654);
-            this.panel489.Name = "panel489";
-            this.panel489.Size = new System.Drawing.Size(25, 25);
-            this.panel489.TabIndex = 473;
-            // 
-            // panel490
-            // 
-            this.panel490.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel490.Location = new System.Drawing.Point(224, 654);
-            this.panel490.Name = "panel490";
-            this.panel490.Size = new System.Drawing.Size(25, 25);
-            this.panel490.TabIndex = 472;
-            // 
-            // panel491
-            // 
-            this.panel491.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel491.Location = new System.Drawing.Point(255, 654);
-            this.panel491.Name = "panel491";
-            this.panel491.Size = new System.Drawing.Size(25, 25);
-            this.panel491.TabIndex = 471;
-            // 
-            // panel492
-            // 
-            this.panel492.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel492.Location = new System.Drawing.Point(286, 654);
-            this.panel492.Name = "panel492";
-            this.panel492.Size = new System.Drawing.Size(25, 25);
-            this.panel492.TabIndex = 470;
-            // 
-            // panel485
-            // 
-            this.panel485.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel485.Location = new System.Drawing.Point(100, 623);
-            this.panel485.Name = "panel485";
-            this.panel485.Size = new System.Drawing.Size(25, 25);
-            this.panel485.TabIndex = 469;
-            // 
-            // panel486
-            // 
-            this.panel486.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel486.Location = new System.Drawing.Point(100, 654);
-            this.panel486.Name = "panel486";
-            this.panel486.Size = new System.Drawing.Size(25, 25);
-            this.panel486.TabIndex = 468;
-            // 
-            // panel483
-            // 
-            this.panel483.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel483.Location = new System.Drawing.Point(100, 561);
-            this.panel483.Name = "panel483";
-            this.panel483.Size = new System.Drawing.Size(25, 25);
-            this.panel483.TabIndex = 467;
-            // 
-            // panel480
-            // 
-            this.panel480.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel480.Location = new System.Drawing.Point(100, 592);
-            this.panel480.Name = "panel480";
-            this.panel480.Size = new System.Drawing.Size(25, 25);
-            this.panel480.TabIndex = 465;
-            // 
-            // panel481
-            // 
-            this.panel481.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel481.Location = new System.Drawing.Point(141, 520);
-            this.panel481.Name = "panel481";
-            this.panel481.Size = new System.Drawing.Size(25, 25);
-            this.panel481.TabIndex = 464;
-            // 
-            // panel482
-            // 
-            this.panel482.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel482.Location = new System.Drawing.Point(172, 520);
-            this.panel482.Name = "panel482";
-            this.panel482.Size = new System.Drawing.Size(25, 25);
-            this.panel482.TabIndex = 463;
-            // 
-            // panel470
-            // 
-            this.panel470.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel470.Location = new System.Drawing.Point(203, 520);
-            this.panel470.Name = "panel470";
-            this.panel470.Size = new System.Drawing.Size(25, 25);
-            this.panel470.TabIndex = 462;
-            // 
-            // panel475
-            // 
-            this.panel475.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel475.Location = new System.Drawing.Point(234, 520);
-            this.panel475.Name = "panel475";
-            this.panel475.Size = new System.Drawing.Size(25, 25);
-            this.panel475.TabIndex = 461;
-            // 
-            // panel473
-            // 
-            this.panel473.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel473.Location = new System.Drawing.Point(265, 520);
-            this.panel473.Name = "panel473";
-            this.panel473.Size = new System.Drawing.Size(25, 25);
-            this.panel473.TabIndex = 460;
-            // 
-            // panel474
-            // 
-            this.panel474.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel474.Location = new System.Drawing.Point(296, 520);
-            this.panel474.Name = "panel474";
-            this.panel474.Size = new System.Drawing.Size(25, 25);
-            this.panel474.TabIndex = 458;
             // 
             // panel360
             // 
@@ -5360,46 +4643,6 @@
             this.panel183.Size = new System.Drawing.Size(25, 25);
             this.panel183.TabIndex = 171;
             // 
-            // panel160
-            // 
-            this.panel160.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel160.Location = new System.Drawing.Point(1505, 520);
-            this.panel160.Name = "panel160";
-            this.panel160.Size = new System.Drawing.Size(25, 25);
-            this.panel160.TabIndex = 158;
-            // 
-            // panel159
-            // 
-            this.panel159.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel159.Location = new System.Drawing.Point(378, 520);
-            this.panel159.Name = "panel159";
-            this.panel159.Size = new System.Drawing.Size(25, 25);
-            this.panel159.TabIndex = 157;
-            // 
-            // panel158
-            // 
-            this.panel158.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel158.Location = new System.Drawing.Point(1474, 520);
-            this.panel158.Name = "panel158";
-            this.panel158.Size = new System.Drawing.Size(25, 25);
-            this.panel158.TabIndex = 156;
-            // 
-            // panel137
-            // 
-            this.panel137.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel137.Location = new System.Drawing.Point(1567, 768);
-            this.panel137.Name = "panel137";
-            this.panel137.Size = new System.Drawing.Size(25, 25);
-            this.panel137.TabIndex = 155;
-            // 
-            // panel138
-            // 
-            this.panel138.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel138.Location = new System.Drawing.Point(1598, 768);
-            this.panel138.Name = "panel138";
-            this.panel138.Size = new System.Drawing.Size(25, 25);
-            this.panel138.TabIndex = 154;
-            // 
             // panel139
             // 
             this.panel139.BackColor = System.Drawing.Color.Gainsboro;
@@ -5543,22 +4786,6 @@
             this.panel157.Name = "panel157";
             this.panel157.Size = new System.Drawing.Size(25, 25);
             this.panel157.TabIndex = 136;
-            // 
-            // panel116
-            // 
-            this.panel116.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel116.Location = new System.Drawing.Point(1567, 644);
-            this.panel116.Name = "panel116";
-            this.panel116.Size = new System.Drawing.Size(25, 25);
-            this.panel116.TabIndex = 134;
-            // 
-            // panel117
-            // 
-            this.panel117.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel117.Location = new System.Drawing.Point(1598, 644);
-            this.panel117.Name = "panel117";
-            this.panel117.Size = new System.Drawing.Size(25, 25);
-            this.panel117.TabIndex = 133;
             // 
             // panel118
             // 
@@ -5704,22 +4931,6 @@
             this.panel136.Size = new System.Drawing.Size(25, 25);
             this.panel136.TabIndex = 115;
             // 
-            // panel95
-            // 
-            this.panel95.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel95.Location = new System.Drawing.Point(1567, 520);
-            this.panel95.Name = "panel95";
-            this.panel95.Size = new System.Drawing.Size(25, 25);
-            this.panel95.TabIndex = 113;
-            // 
-            // panel96
-            // 
-            this.panel96.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel96.Location = new System.Drawing.Point(1598, 520);
-            this.panel96.Name = "panel96";
-            this.panel96.Size = new System.Drawing.Size(25, 25);
-            this.panel96.TabIndex = 112;
-            // 
             // panel97
             // 
             this.panel97.BackColor = System.Drawing.Color.Gainsboro;
@@ -5735,30 +4946,6 @@
             this.panel98.Name = "panel98";
             this.panel98.Size = new System.Drawing.Size(25, 25);
             this.panel98.TabIndex = 110;
-            // 
-            // panel99
-            // 
-            this.panel99.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel99.Location = new System.Drawing.Point(1629, 489);
-            this.panel99.Name = "panel99";
-            this.panel99.Size = new System.Drawing.Size(25, 25);
-            this.panel99.TabIndex = 108;
-            // 
-            // panel100
-            // 
-            this.panel100.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel100.Location = new System.Drawing.Point(1629, 520);
-            this.panel100.Name = "panel100";
-            this.panel100.Size = new System.Drawing.Size(25, 25);
-            this.panel100.TabIndex = 109;
-            // 
-            // panel101
-            // 
-            this.panel101.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel101.Location = new System.Drawing.Point(1660, 489);
-            this.panel101.Name = "panel101";
-            this.panel101.Size = new System.Drawing.Size(25, 25);
-            this.panel101.TabIndex = 106;
             // 
             // panel102
             // 
@@ -5784,14 +4971,6 @@
             this.panel104.Size = new System.Drawing.Size(25, 25);
             this.panel104.TabIndex = 104;
             // 
-            // panel105
-            // 
-            this.panel105.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel105.Location = new System.Drawing.Point(1691, 489);
-            this.panel105.Name = "panel105";
-            this.panel105.Size = new System.Drawing.Size(25, 25);
-            this.panel105.TabIndex = 102;
-            // 
             // panel106
             // 
             this.panel106.BackColor = System.Drawing.Color.Gainsboro;
@@ -5799,14 +4978,6 @@
             this.panel106.Name = "panel106";
             this.panel106.Size = new System.Drawing.Size(25, 25);
             this.panel106.TabIndex = 103;
-            // 
-            // panel107
-            // 
-            this.panel107.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel107.Location = new System.Drawing.Point(1722, 489);
-            this.panel107.Name = "panel107";
-            this.panel107.Size = new System.Drawing.Size(25, 25);
-            this.panel107.TabIndex = 100;
             // 
             // panel108
             // 
@@ -5832,14 +5003,6 @@
             this.panel111.Size = new System.Drawing.Size(25, 25);
             this.panel111.TabIndex = 97;
             // 
-            // panel112
-            // 
-            this.panel112.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel112.Location = new System.Drawing.Point(1753, 489);
-            this.panel112.Name = "panel112";
-            this.panel112.Size = new System.Drawing.Size(25, 25);
-            this.panel112.TabIndex = 95;
-            // 
             // panel113
             // 
             this.panel113.BackColor = System.Drawing.Color.Gainsboro;
@@ -5848,14 +5011,6 @@
             this.panel113.Size = new System.Drawing.Size(25, 25);
             this.panel113.TabIndex = 96;
             // 
-            // panel114
-            // 
-            this.panel114.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel114.Location = new System.Drawing.Point(1784, 489);
-            this.panel114.Name = "panel114";
-            this.panel114.Size = new System.Drawing.Size(25, 25);
-            this.panel114.TabIndex = 93;
-            // 
             // panel115
             // 
             this.panel115.BackColor = System.Drawing.Color.Gainsboro;
@@ -5863,22 +5018,6 @@
             this.panel115.Name = "panel115";
             this.panel115.Size = new System.Drawing.Size(25, 25);
             this.panel115.TabIndex = 94;
-            // 
-            // panel74
-            // 
-            this.panel74.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel74.Location = new System.Drawing.Point(1567, 892);
-            this.panel74.Name = "panel74";
-            this.panel74.Size = new System.Drawing.Size(25, 25);
-            this.panel74.TabIndex = 92;
-            // 
-            // panel75
-            // 
-            this.panel75.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel75.Location = new System.Drawing.Point(1598, 892);
-            this.panel75.Name = "panel75";
-            this.panel75.Size = new System.Drawing.Size(25, 25);
-            this.panel75.TabIndex = 91;
             // 
             // panel76
             // 
@@ -6023,110 +5162,6 @@
             this.panel94.Name = "panel94";
             this.panel94.Size = new System.Drawing.Size(25, 25);
             this.panel94.TabIndex = 73;
-            // 
-            // panel73
-            // 
-            this.panel73.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel73.Location = new System.Drawing.Point(1536, 892);
-            this.panel73.Name = "panel73";
-            this.panel73.Size = new System.Drawing.Size(25, 25);
-            this.panel73.TabIndex = 71;
-            // 
-            // panel70
-            // 
-            this.panel70.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel70.Location = new System.Drawing.Point(1536, 861);
-            this.panel70.Name = "panel70";
-            this.panel70.Size = new System.Drawing.Size(25, 25);
-            this.panel70.TabIndex = 70;
-            // 
-            // panel71
-            // 
-            this.panel71.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel71.Location = new System.Drawing.Point(1536, 830);
-            this.panel71.Name = "panel71";
-            this.panel71.Size = new System.Drawing.Size(25, 25);
-            this.panel71.TabIndex = 69;
-            // 
-            // panel72
-            // 
-            this.panel72.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel72.Location = new System.Drawing.Point(1536, 799);
-            this.panel72.Name = "panel72";
-            this.panel72.Size = new System.Drawing.Size(25, 25);
-            this.panel72.TabIndex = 68;
-            // 
-            // panel67
-            // 
-            this.panel67.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel67.Location = new System.Drawing.Point(1536, 768);
-            this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(25, 25);
-            this.panel67.TabIndex = 67;
-            // 
-            // panel68
-            // 
-            this.panel68.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel68.Location = new System.Drawing.Point(1536, 737);
-            this.panel68.Name = "panel68";
-            this.panel68.Size = new System.Drawing.Size(25, 25);
-            this.panel68.TabIndex = 66;
-            // 
-            // panel69
-            // 
-            this.panel69.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel69.Location = new System.Drawing.Point(1536, 706);
-            this.panel69.Name = "panel69";
-            this.panel69.Size = new System.Drawing.Size(25, 25);
-            this.panel69.TabIndex = 65;
-            // 
-            // panel64
-            // 
-            this.panel64.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel64.Location = new System.Drawing.Point(1536, 675);
-            this.panel64.Name = "panel64";
-            this.panel64.Size = new System.Drawing.Size(25, 25);
-            this.panel64.TabIndex = 64;
-            // 
-            // panel65
-            // 
-            this.panel65.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel65.Location = new System.Drawing.Point(1536, 644);
-            this.panel65.Name = "panel65";
-            this.panel65.Size = new System.Drawing.Size(25, 25);
-            this.panel65.TabIndex = 63;
-            // 
-            // panel66
-            // 
-            this.panel66.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel66.Location = new System.Drawing.Point(1536, 613);
-            this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(25, 25);
-            this.panel66.TabIndex = 62;
-            // 
-            // panel61
-            // 
-            this.panel61.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel61.Location = new System.Drawing.Point(1536, 582);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(25, 25);
-            this.panel61.TabIndex = 61;
-            // 
-            // panel62
-            // 
-            this.panel62.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel62.Location = new System.Drawing.Point(1536, 551);
-            this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(25, 25);
-            this.panel62.TabIndex = 60;
-            // 
-            // panel63
-            // 
-            this.panel63.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel63.Location = new System.Drawing.Point(1536, 520);
-            this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(25, 25);
-            this.panel63.TabIndex = 59;
             // 
             // tabLevel1
             // 
@@ -6587,8 +5622,6 @@
             this.tabLevel1.Controls.Add(this.panel582);
             this.tabLevel1.Controls.Add(this.panel584);
             this.tabLevel1.Controls.Add(this.panel586);
-            this.tabLevel1.Controls.Add(this.panel478);
-            this.tabLevel1.Controls.Add(this.panel476);
             this.tabLevel1.Location = new System.Drawing.Point(4, 24);
             this.tabLevel1.Name = "tabLevel1";
             this.tabLevel1.Padding = new System.Windows.Forms.Padding(3);
@@ -10481,31 +9514,6 @@
             this.panel586.Size = new System.Drawing.Size(25, 25);
             this.panel586.TabIndex = 467;
             // 
-            // panel478
-            // 
-            this.panel478.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel478.Location = new System.Drawing.Point(378, 520);
-            this.panel478.Name = "panel478";
-            this.panel478.Size = new System.Drawing.Size(25, 25);
-            this.panel478.TabIndex = 158;
-            // 
-            // panel476
-            // 
-            this.panel476.BackColor = System.Drawing.Color.Gray;
-            this.panel476.Controls.Add(this.panel477);
-            this.panel476.Location = new System.Drawing.Point(327, 510);
-            this.panel476.Name = "panel476";
-            this.panel476.Size = new System.Drawing.Size(45, 66);
-            this.panel476.TabIndex = 3;
-            // 
-            // panel477
-            // 
-            this.panel477.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel477.Location = new System.Drawing.Point(10, 10);
-            this.panel477.Name = "panel477";
-            this.panel477.Size = new System.Drawing.Size(25, 25);
-            this.panel477.TabIndex = 3;
-            // 
             // panInfo
             // 
             this.panInfo.BackColor = System.Drawing.SystemColors.Control;
@@ -10515,38 +9523,6 @@
             this.panInfo.Name = "panInfo";
             this.panInfo.Size = new System.Drawing.Size(1904, 1017);
             this.panInfo.TabIndex = 24;
-            // 
-            // ustawieniaToolStripMenuItem
-            // 
-            this.ustawieniaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.numeryPozycjiToolStripMenuItem});
-            this.ustawieniaToolStripMenuItem.Name = "ustawieniaToolStripMenuItem";
-            this.ustawieniaToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.ustawieniaToolStripMenuItem.Text = "Ustawienia";
-            // 
-            // numeryPozycjiToolStripMenuItem
-            // 
-            this.numeryPozycjiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitShowNumbers,
-            this.mitHideNumbers});
-            this.numeryPozycjiToolStripMenuItem.Name = "numeryPozycjiToolStripMenuItem";
-            this.numeryPozycjiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.numeryPozycjiToolStripMenuItem.Text = "Numery pozycji";
-            // 
-            // mitShowNumbers
-            // 
-            this.mitShowNumbers.Name = "mitShowNumbers";
-            this.mitShowNumbers.Size = new System.Drawing.Size(180, 22);
-            this.mitShowNumbers.Text = "Pokaż";
-            this.mitShowNumbers.Click += new System.EventHandler(this.mitShowNumbers_Click);
-            // 
-            // mitHideNumbers
-            // 
-            this.mitHideNumbers.Enabled = false;
-            this.mitHideNumbers.Name = "mitHideNumbers";
-            this.mitHideNumbers.Size = new System.Drawing.Size(180, 22);
-            this.mitHideNumbers.Text = "Ukryj";
-            this.mitHideNumbers.Click += new System.EventHandler(this.mitHideNumbers_Click);
             // 
             // frmMain
             // 
@@ -10562,7 +9538,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabLevel0.ResumeLayout(false);
@@ -10574,8 +9549,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel594.ResumeLayout(false);
-            this.panel506.ResumeLayout(false);
             this.panel361.ResumeLayout(false);
             this.panel383.ResumeLayout(false);
             this.panel405.ResumeLayout(false);
@@ -10612,7 +9585,6 @@
             this.panel629.ResumeLayout(false);
             this.panel607.ResumeLayout(false);
             this.panel570.ResumeLayout(false);
-            this.panel476.ResumeLayout(false);
             this.panInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -10623,8 +9595,6 @@
 
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel15;
@@ -10639,8 +9609,6 @@
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabLevel0;
-        private System.Windows.Forms.Panel panel74;
-        private System.Windows.Forms.Panel panel75;
         private System.Windows.Forms.Panel panel76;
         private System.Windows.Forms.Panel panel77;
         private System.Windows.Forms.Panel panel78;
@@ -10659,23 +9627,8 @@
         private System.Windows.Forms.Panel panel92;
         private System.Windows.Forms.Panel panel93;
         private System.Windows.Forms.Panel panel94;
-        private System.Windows.Forms.Panel panel73;
-        private System.Windows.Forms.Panel panel70;
-        private System.Windows.Forms.Panel panel71;
-        private System.Windows.Forms.Panel panel72;
-        private System.Windows.Forms.Panel panel67;
-        private System.Windows.Forms.Panel panel68;
-        private System.Windows.Forms.Panel panel69;
-        private System.Windows.Forms.Panel panel64;
-        private System.Windows.Forms.Panel panel65;
-        private System.Windows.Forms.Panel panel66;
-        private System.Windows.Forms.Panel panel61;
-        private System.Windows.Forms.Panel panel62;
-        private System.Windows.Forms.Panel panel63;
         private System.Windows.Forms.TabPage tabLevel1;
         private System.Windows.Forms.Panel panInfo;
-        private System.Windows.Forms.Panel panel137;
-        private System.Windows.Forms.Panel panel138;
         private System.Windows.Forms.Panel panel139;
         private System.Windows.Forms.Panel panel140;
         private System.Windows.Forms.Panel panel141;
@@ -10694,8 +9647,6 @@
         private System.Windows.Forms.Panel panel155;
         private System.Windows.Forms.Panel panel156;
         private System.Windows.Forms.Panel panel157;
-        private System.Windows.Forms.Panel panel116;
-        private System.Windows.Forms.Panel panel117;
         private System.Windows.Forms.Panel panel118;
         private System.Windows.Forms.Panel panel119;
         private System.Windows.Forms.Panel panel120;
@@ -10714,29 +9665,17 @@
         private System.Windows.Forms.Panel panel134;
         private System.Windows.Forms.Panel panel135;
         private System.Windows.Forms.Panel panel136;
-        private System.Windows.Forms.Panel panel95;
-        private System.Windows.Forms.Panel panel96;
         private System.Windows.Forms.Panel panel97;
         private System.Windows.Forms.Panel panel98;
-        private System.Windows.Forms.Panel panel99;
-        private System.Windows.Forms.Panel panel100;
-        private System.Windows.Forms.Panel panel101;
         private System.Windows.Forms.Panel panel102;
         private System.Windows.Forms.Panel panel103;
         private System.Windows.Forms.Panel panel104;
-        private System.Windows.Forms.Panel panel105;
         private System.Windows.Forms.Panel panel106;
-        private System.Windows.Forms.Panel panel107;
         private System.Windows.Forms.Panel panel108;
         private System.Windows.Forms.Panel panel110;
         private System.Windows.Forms.Panel panel111;
-        private System.Windows.Forms.Panel panel112;
         private System.Windows.Forms.Panel panel113;
-        private System.Windows.Forms.Panel panel114;
         private System.Windows.Forms.Panel panel115;
-        private System.Windows.Forms.Panel panel160;
-        private System.Windows.Forms.Panel panel159;
-        private System.Windows.Forms.Panel panel158;
         private System.Windows.Forms.Panel panel228;
         private System.Windows.Forms.Panel panel229;
         private System.Windows.Forms.Panel panel230;
@@ -11044,57 +9983,6 @@
         private System.Windows.Forms.Panel panel357;
         private System.Windows.Forms.Panel panel358;
         private System.Windows.Forms.Panel panel359;
-        private System.Windows.Forms.Panel panel473;
-        private System.Windows.Forms.Panel panel474;
-        private System.Windows.Forms.Panel panel516;
-        private System.Windows.Forms.Panel panel512;
-        private System.Windows.Forms.Panel panel513;
-        private System.Windows.Forms.Panel panel514;
-        private System.Windows.Forms.Panel panel515;
-        private System.Windows.Forms.Panel panel508;
-        private System.Windows.Forms.Panel panel509;
-        private System.Windows.Forms.Panel panel510;
-        private System.Windows.Forms.Panel panel511;
-        private System.Windows.Forms.Panel panel506;
-        private System.Windows.Forms.Panel panel507;
-        private System.Windows.Forms.Panel panel497;
-        private System.Windows.Forms.Panel panel498;
-        private System.Windows.Forms.Panel panel499;
-        private System.Windows.Forms.Panel panel500;
-        private System.Windows.Forms.Panel panel493;
-        private System.Windows.Forms.Panel panel494;
-        private System.Windows.Forms.Panel panel495;
-        private System.Windows.Forms.Panel panel496;
-        private System.Windows.Forms.Panel panel487;
-        private System.Windows.Forms.Panel panel488;
-        private System.Windows.Forms.Panel panel489;
-        private System.Windows.Forms.Panel panel490;
-        private System.Windows.Forms.Panel panel491;
-        private System.Windows.Forms.Panel panel492;
-        private System.Windows.Forms.Panel panel485;
-        private System.Windows.Forms.Panel panel486;
-        private System.Windows.Forms.Panel panel483;
-        private System.Windows.Forms.Panel panel480;
-        private System.Windows.Forms.Panel panel481;
-        private System.Windows.Forms.Panel panel482;
-        private System.Windows.Forms.Panel panel470;
-        private System.Windows.Forms.Panel panel475;
-        private System.Windows.Forms.Panel panel478;
-        private System.Windows.Forms.Panel panel476;
-        private System.Windows.Forms.Panel panel477;
-        private System.Windows.Forms.Panel panel520;
-        private System.Windows.Forms.Panel panel521;
-        private System.Windows.Forms.Panel panel522;
-        private System.Windows.Forms.Panel panel523;
-        private System.Windows.Forms.Panel panel524;
-        private System.Windows.Forms.Panel panel525;
-        private System.Windows.Forms.Panel panel526;
-        private System.Windows.Forms.Panel panel527;
-        private System.Windows.Forms.Panel panel528;
-        private System.Windows.Forms.Panel panel529;
-        private System.Windows.Forms.Panel panel594;
-        private System.Windows.Forms.Panel panel595;
-        private System.Windows.Forms.Panel panel593;
         private System.Windows.Forms.Panel panel570;
         private System.Windows.Forms.Panel panel571;
         private System.Windows.Forms.Panel panel572;
@@ -11184,24 +10072,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel592;
-        private System.Windows.Forms.Panel panel600;
-        private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.Panel panel88;
-        private System.Windows.Forms.Panel panel109;
-        private System.Windows.Forms.Panel panel130;
-        private System.Windows.Forms.Panel panel151;
-        private System.Windows.Forms.Panel panel591;
-        private System.Windows.Forms.Panel panel519;
-        private System.Windows.Forms.Panel panel602;
-        private System.Windows.Forms.Panel panel603;
-        private System.Windows.Forms.Panel panel518;
-        private System.Windows.Forms.Panel panel501;
-        private System.Windows.Forms.Panel panel502;
-        private System.Windows.Forms.Panel panel503;
-        private System.Windows.Forms.Panel panel504;
-        private System.Windows.Forms.Panel panel505;
-        private System.Windows.Forms.Panel panel517;
         private System.Windows.Forms.Panel panel668;
         private System.Windows.Forms.Panel panel669;
         private System.Windows.Forms.Panel panel670;
