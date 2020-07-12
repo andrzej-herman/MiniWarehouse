@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2019E42F-B0EA-4E79-A471-CFA95FB7CD40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Simulator</RootNamespace>
+    <AssemblyName>Warehouse</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\production.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ucButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucButton.Designer.cs">
+      <DependentUpon>ucButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDisplay.Designer.cs">
+      <DependentUpon>ucDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucPlc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucPlc.Designer.cs">
+      <DependentUpon>ucPlc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucPosition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucPosition.Designer.cs">
+      <DependentUpon>ucPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucSignal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucSignal.Designer.cs">
+      <DependentUpon>ucSignal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Mapper.cs" />
+    <Compile Include="Database\Palety.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Partie.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\PartiePalety.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Pozycje.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Produkty.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SimulatorModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimulatorModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SimulatorModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SimulatorModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimulatorModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGenerateBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGenerateBatch.Designer.cs">
+      <DependentUpon>frmGenerateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Helpers\Rand.cs" />
+    <Compile Include="Siemens\Plc.cs" />
+    <Compile Include="Production\Batch.cs" />
+    <Compile Include="Production\BatchPallet.cs" />
+    <Compile Include="Production\Product.cs" />
+    <Compile Include="Production\ProductionGenerator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarehouseData\Master.cs" />
+    <Compile Include="WarehouseData\Pallet.cs" />
+    <Compile Include="WarehouseData\Position.cs" />
+    <Compile Include="WarehouseData\Positions\PosControl.cs" />
+    <Compile Include="WarehouseData\Positions\PosProduction.cs" />
+    <Compile Include="WarehouseData\Positions\PosStandard.cs" />
+    <Compile Include="WarehouseData\Warehouse.cs" />
+    <EmbeddedResource Include="Controls\ucButton.resx">
+      <DependentUpon>ucButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucDisplay.resx">
+      <DependentUpon>ucDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucPlc.resx">
+      <DependentUpon>ucPlc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucPosition.resx">
+      <DependentUpon>ucPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucSignal.resx">
+      <DependentUpon>ucSignal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGenerateBatch.resx">
+      <DependentUpon>frmGenerateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Database\SimulatorModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SimulatorModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\SimulatorModel.edmx.diagram">
+      <DependentUpon>SimulatorModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ramp01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ramp02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ramp03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ramp04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ramp05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datalogic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operator.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\SimulatorModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SimulatorModel.edmx</DependentUpon>
+      <LastGenOutput>SimulatorModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\SimulatorModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SimulatorModel.edmx</DependentUpon>
+      <LastGenOutput>SimulatorModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.jpg" />
+    <None Include="Resources\red.jpg" />
+    <None Include="Resources\powerOff.jpg" />
+    <None Include="Resources\green.jpg" />
+    <None Include="Resources\blue.jpg" />
+    <None Include="Resources\warehouse.ico" />
+    <None Include="Resources\production.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

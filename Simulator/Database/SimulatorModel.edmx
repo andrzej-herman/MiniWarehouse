@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SimulatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Palety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="int" Nullable="false" />
+          <Property Name="Oznaczenie" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="KodKreskowy" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="NazwaProduktu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Stan" Type="int" Nullable="false" />
+          <Property Name="NumerPartiiProdukcyjnej" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DataProdukcji" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TerminPrzydatnosci" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Destynacja" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Pozycje">
+          <Key>
+            <PropertyRef Name="PozycjaId" />
+          </Key>
+          <Property Name="PozycjaId" Type="int" Nullable="false" />
+          <Property Name="Szerokosc" Type="int" Nullable="false" />
+          <Property Name="Wysokosc" Type="int" Nullable="false" />
+          <Property Name="X" Type="int" Nullable="false" />
+          <Property Name="Y" Type="int" Nullable="false" />
+          <Property Name="Poziom" Type="int" Nullable="false" />
+          <Property Name="Typ" Type="int" Nullable="false" />
+          <Property Name="Przod" Type="int" />
+          <Property Name="Tyl" Type="int" />
+          <Property Name="Lewo" Type="int" />
+          <Property Name="Prawo" Type="int" />
+          <Property Name="Gora" Type="int" />
+          <Property Name="Dol" Type="int" />
+          <Property Name="AktualnyKierunek" Type="int" Nullable="false" />
+          <Property Name="Zatoka" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rampa" Type="nvarchar" MaxLength="20" />
+          <Property Name="Master1" Type="bit" Nullable="false" />
+          <Property Name="Master2" Type="bit" Nullable="false" />
+          <Property Name="PaletaId" Type="int" />
+        </EntityType>
+        <EntityType Name="Partie">
+          <Key>
+            <PropertyRef Name="PartiaId" />
+          </Key>
+          <Property Name="PartiaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumerPartii" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProduktId" Type="int" Nullable="false" />
+          <Property Name="DataUtworzenia" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="IloscPalet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartiePalety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oznaczenie" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="KodKreskowy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PartiaId" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produkty">
+          <Key>
+            <PropertyRef Name="ProduktId" />
+          </Key>
+          <Property Name="ProduktId" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TerminPrzydatnosiWDniach" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Partie_Produkty">
+          <End Role="Produkty" Type="Self.Produkty" Multiplicity="1" />
+          <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produkty">
+              <PropertyRef Name="ProduktId" />
+            </Principal>
+            <Dependent Role="Partie">
+              <PropertyRef Name="ProduktId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartiePalety_Partie">
+          <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+          <End Role="PartiePalety" Type="Self.PartiePalety" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partie">
+              <PropertyRef Name="PartiaId" />
+            </Principal>
+            <Dependent Role="PartiePalety">
+              <PropertyRef Name="PartiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SimulatorModelStoreContainer">
+          <EntitySet Name="Palety" EntityType="Self.Palety" Schema="magazyn" store:Type="Tables" />
+          <EntitySet Name="Pozycje" EntityType="Self.Pozycje" Schema="magazyn" store:Type="Tables" />
+          <EntitySet Name="Partie" EntityType="Self.Partie" Schema="produkcja" store:Type="Tables" />
+          <EntitySet Name="PartiePalety" EntityType="Self.PartiePalety" Schema="produkcja" store:Type="Tables" />
+          <EntitySet Name="Produkty" EntityType="Self.Produkty" Schema="produkcja" store:Type="Tables" />
+          <AssociationSet Name="FK_Partie_Produkty" Association="Self.FK_Partie_Produkty">
+            <End Role="Produkty" EntitySet="Produkty" />
+            <End Role="Partie" EntitySet="Partie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartiePalety_Partie" Association="Self.FK_PartiePalety_Partie">
+            <End Role="Partie" EntitySet="Partie" />
+            <End Role="PartiePalety" EntitySet="PartiePalety" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SimulatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Palety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="Int32" Nullable="false" />
+          <Property Name="Oznaczenie" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KodKreskowy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NazwaProduktu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Stan" Type="Int32" Nullable="false" />
+          <Property Name="NumerPartiiProdukcyjnej" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataProdukcji" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TerminPrzydatnosci" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Destynacja" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Partie">
+          <Key>
+            <PropertyRef Name="PartiaId" />
+          </Key>
+          <Property Name="PartiaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumerPartii" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProduktId" Type="Int32" Nullable="false" />
+          <Property Name="DataUtworzenia" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="IloscPalet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Produkty" Relationship="Self.FK_Partie_Produkty" FromRole="Partie" ToRole="Produkty" />
+          <NavigationProperty Name="PartiePalety" Relationship="Self.FK_PartiePalety_Partie" FromRole="Partie" ToRole="PartiePalety" />
+        </EntityType>
+        <EntityType Name="PartiePalety">
+          <Key>
+            <PropertyRef Name="PaletaId" />
+          </Key>
+          <Property Name="PaletaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oznaczenie" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KodKreskowy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PartiaId" Type="Int32" Nullable="false" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Partie" Relationship="Self.FK_PartiePalety_Partie" FromRole="PartiePalety" ToRole="Partie" />
+        </EntityType>
+        <EntityType Name="Produkty">
+          <Key>
+            <PropertyRef Name="ProduktId" />
+          </Key>
+          <Property Name="ProduktId" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TerminPrzydatnosiWDniach" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Partie" Relationship="Self.FK_Partie_Produkty" FromRole="Produkty" ToRole="Partie" />
+        </EntityType>
+        <Association Name="FK_Partie_Produkty">
+          <End Role="Produkty" Type="Self.Produkty" Multiplicity="1" />
+          <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produkty">
+              <PropertyRef Name="ProduktId" />
+            </Principal>
+            <Dependent Role="Partie">
+              <PropertyRef Name="ProduktId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartiePalety_Partie">
+          <End Role="Partie" Type="Self.Partie" Multiplicity="1" />
+          <End Role="PartiePalety" Type="Self.PartiePalety" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partie">
+              <PropertyRef Name="PartiaId" />
+            </Principal>
+            <Dependent Role="PartiePalety">
+              <PropertyRef Name="PartiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SimulatorContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Palety" EntityType="Self.Palety" />
+          <EntitySet Name="Partie" EntityType="Self.Partie" />
+          <EntitySet Name="PartiePalety" EntityType="Self.PartiePalety" />
+          <EntitySet Name="Produkty" EntityType="Self.Produkty" />
+          <AssociationSet Name="FK_Partie_Produkty" Association="Self.FK_Partie_Produkty">
+            <End Role="Produkty" EntitySet="Produkty" />
+            <End Role="Partie" EntitySet="Partie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartiePalety_Partie" Association="Self.FK_PartiePalety_Partie">
+            <End Role="Partie" EntitySet="Partie" />
+            <End Role="PartiePalety" EntitySet="PartiePalety" />
+          </AssociationSet>
+          <EntitySet Name="Pozycje" EntityType="SimulatorModel.Pozycje" />
+        </EntityContainer>
+        <EntityType Name="Pozycje">
+          <Key>
+            <PropertyRef Name="PozycjaId" />
+          </Key>
+          <Property Name="PozycjaId" Type="Int32" Nullable="false" />
+          <Property Name="Szerokosc" Type="Int32" Nullable="false" />
+          <Property Name="Wysokosc" Type="Int32" Nullable="false" />
+          <Property Name="X" Type="Int32" Nullable="false" />
+          <Property Name="Y" Type="Int32" Nullable="false" />
+          <Property Name="Poziom" Type="Int32" Nullable="false" />
+          <Property Name="Typ" Type="Int32" Nullable="false" />
+          <Property Name="Przod" Type="Int32" />
+          <Property Name="Tyl" Type="Int32" />
+          <Property Name="Lewo" Type="Int32" />
+          <Property Name="Prawo" Type="Int32" />
+          <Property Name="Gora" Type="Int32" />
+          <Property Name="Dol" Type="Int32" />
+          <Property Name="AktualnyKierunek" Type="Int32" Nullable="false" />
+          <Property Name="Zatoka" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Rampa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Master1" Type="Boolean" Nullable="false" />
+          <Property Name="Master2" Type="Boolean" Nullable="false" />
+          <Property Name="PaletaId" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SimulatorModelStoreContainer" CdmEntityContainer="SimulatorContext">
+          <EntitySetMapping Name="Palety">
+            <EntityTypeMapping TypeName="SimulatorModel.Palety">
+              <MappingFragment StoreEntitySet="Palety">
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="Oznaczenie" ColumnName="Oznaczenie" />
+                <ScalarProperty Name="KodKreskowy" ColumnName="KodKreskowy" />
+                <ScalarProperty Name="NazwaProduktu" ColumnName="NazwaProduktu" />
+                <ScalarProperty Name="Stan" ColumnName="Stan" />
+                <ScalarProperty Name="NumerPartiiProdukcyjnej" ColumnName="NumerPartiiProdukcyjnej" />
+                <ScalarProperty Name="DataProdukcji" ColumnName="DataProdukcji" />
+                <ScalarProperty Name="TerminPrzydatnosci" ColumnName="TerminPrzydatnosci" />
+                <ScalarProperty Name="Destynacja" ColumnName="Destynacja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partie">
+            <EntityTypeMapping TypeName="SimulatorModel.Partie">
+              <MappingFragment StoreEntitySet="Partie">
+                <ScalarProperty Name="PartiaId" ColumnName="PartiaId" />
+                <ScalarProperty Name="NumerPartii" ColumnName="NumerPartii" />
+                <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
+                <ScalarProperty Name="DataUtworzenia" ColumnName="DataUtworzenia" />
+                <ScalarProperty Name="IloscPalet" ColumnName="IloscPalet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartiePalety">
+            <EntityTypeMapping TypeName="SimulatorModel.PartiePalety">
+              <MappingFragment StoreEntitySet="PartiePalety">
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="Oznaczenie" ColumnName="Oznaczenie" />
+                <ScalarProperty Name="KodKreskowy" ColumnName="KodKreskowy" />
+                <ScalarProperty Name="PartiaId" ColumnName="PartiaId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produkty">
+            <EntityTypeMapping TypeName="SimulatorModel.Produkty">
+              <MappingFragment StoreEntitySet="Produkty">
+                <ScalarProperty Name="ProduktId" ColumnName="ProduktId" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="TerminPrzydatnosiWDniach" ColumnName="TerminPrzydatnosiWDniach" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pozycje">
+            <EntityTypeMapping TypeName="SimulatorModel.Pozycje">
+              <MappingFragment StoreEntitySet="Pozycje">
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="Master2" ColumnName="Master2" />
+                <ScalarProperty Name="Master1" ColumnName="Master1" />
+                <ScalarProperty Name="Rampa" ColumnName="Rampa" />
+                <ScalarProperty Name="Zatoka" ColumnName="Zatoka" />
+                <ScalarProperty Name="AktualnyKierunek" ColumnName="AktualnyKierunek" />
+                <ScalarProperty Name="Dol" ColumnName="Dol" />
+                <ScalarProperty Name="Gora" ColumnName="Gora" />
+                <ScalarProperty Name="Prawo" ColumnName="Prawo" />
+                <ScalarProperty Name="Lewo" ColumnName="Lewo" />
+                <ScalarProperty Name="Tyl" ColumnName="Tyl" />
+                <ScalarProperty Name="Przod" ColumnName="Przod" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Wysokosc" ColumnName="Wysokosc" />
+                <ScalarProperty Name="Szerokosc" ColumnName="Szerokosc" />
+                <ScalarProperty Name="PozycjaId" ColumnName="PozycjaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

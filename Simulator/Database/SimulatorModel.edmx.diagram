@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5382265cf823422c8e971bea9879a9dc" Name="Diagram1">
+        <EntityTypeShape EntityType="SimulatorModel.Palety" Width="2.125" PointX="0.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimulatorModel.Partie" Width="2" PointX="3.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimulatorModel.PartiePalety" Width="2" PointX="5.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SimulatorModel.Produkty" Width="2.125" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="SimulatorModel.FK_Partie_Produkty" ManuallyRouted="false" />
+        <AssociationConnector Association="SimulatorModel.FK_PartiePalety_Partie" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SimulatorModel.Pozycje" Width="2" PointX="3" PointY="3.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
