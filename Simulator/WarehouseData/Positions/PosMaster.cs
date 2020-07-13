@@ -15,5 +15,10 @@ namespace Simulator.WarehouseData.Positions
         {
 
         }
+
+        public override void MapMaster(Master p)
+        {
+            
+        }
     }
 }

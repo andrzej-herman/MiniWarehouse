@@ -35,7 +35,7 @@ namespace Simulator.WarehouseData
         private ucPosition Display { get; set; }
 
         public virtual bool CanHostPallet
-        {
+        {                                                              
             get { return Pallet == null; }
         }
 
@@ -134,7 +134,6 @@ namespace Simulator.WarehouseData
                 RemovePallet();
             }
         }
-
 
 
     }
