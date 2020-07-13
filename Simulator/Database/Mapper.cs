@@ -159,7 +159,13 @@ namespace Simulator.Database
                 case PositionType.WarehouseEnter:
                 case PositionType.Warehouse:
                 case PositionType.Master:
+                    result = new PosMaster(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 case PositionType.Battery:
+                    result = new PosBattery(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                    break;
                 default:
                     result = new PosStandard(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                         db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);

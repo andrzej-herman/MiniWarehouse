@@ -143,12 +143,14 @@
     <Compile Include="WarehouseData\Master.cs" />
     <Compile Include="WarehouseData\Pallet.cs" />
     <Compile Include="WarehouseData\Position.cs" />
+    <Compile Include="WarehouseData\Positions\PosBattery.cs" />
     <Compile Include="WarehouseData\Positions\PosControl.cs" />
     <Compile Include="WarehouseData\Positions\PosCross.cs" />
     <Compile Include="WarehouseData\Positions\PosInspection.cs" />
     <Compile Include="WarehouseData\Positions\PosLift.cs" />
     <Compile Include="WarehouseData\Positions\PosLiftEnter.cs" />
     <Compile Include="WarehouseData\Positions\PosMainEnter.cs" />
+    <Compile Include="WarehouseData\Positions\PosMaster.cs" />
     <Compile Include="WarehouseData\Positions\PosProduction.cs" />
     <Compile Include="WarehouseData\Positions\PosRamp.cs" />
     <Compile Include="WarehouseData\Positions\PosRampEnter.cs" />
