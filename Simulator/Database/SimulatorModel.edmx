@@ -39,8 +39,7 @@
           <Property Name="AktualnyKierunek" Type="int" Nullable="false" />
           <Property Name="Zatoka" Type="nvarchar" MaxLength="20" />
           <Property Name="Rampa" Type="nvarchar" MaxLength="20" />
-          <Property Name="Master1" Type="bit" Nullable="false" />
-          <Property Name="Master2" Type="bit" Nullable="false" />
+          <Property Name="MasterId" Type="int" />
           <Property Name="PaletaId" Type="int" />
         </EntityType>
         <EntityType Name="Partie">
@@ -219,8 +218,7 @@
           <Property Name="AktualnyKierunek" Type="Int32" Nullable="false" />
           <Property Name="Zatoka" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Rampa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Master1" Type="Boolean" Nullable="false" />
-          <Property Name="Master2" Type="Boolean" Nullable="false" />
+          <Property Name="MasterId" Type="Int32" />
           <Property Name="PaletaId" Type="Int32" />
         </EntityType>
       </Schema>
@@ -279,8 +277,7 @@
             <EntityTypeMapping TypeName="SimulatorModel.Pozycje">
               <MappingFragment StoreEntitySet="Pozycje">
                 <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
-                <ScalarProperty Name="Master2" ColumnName="Master2" />
-                <ScalarProperty Name="Master1" ColumnName="Master1" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
                 <ScalarProperty Name="Rampa" ColumnName="Rampa" />
                 <ScalarProperty Name="Zatoka" ColumnName="Zatoka" />
                 <ScalarProperty Name="AktualnyKierunek" ColumnName="AktualnyKierunek" />

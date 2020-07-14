@@ -114,61 +114,67 @@ namespace Simulator.Database
             {
                 case PositionType.Production:
                     result = new PosProduction(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type, 
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.LiftEnter:
                     result = new PosLiftEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Lift:
                     result = new PosLift(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Control:
                     result = new PosControl(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.MainEnter:
                     result = new PosMainEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Repair:
                     result = new PosRepair(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Inspection:
                     result = new PosInspection(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                      db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                      db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Cross:
                     result = new PosCross(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                     db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                     db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Ramp:
                     result = new PosRamp(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.RampEnter:
                     result = new PosRampEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Standard:
                     result = new PosStandard(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.WarehouseEnter:
+                    result = new PosWarehouseEnter(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
+                    break;
                 case PositionType.Warehouse:
+                    result = new PosWarehouse(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
+                    break;
                 case PositionType.Master:
                     result = new PosMaster(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 case PositionType.Battery:
                     result = new PosBattery(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 default:
                     result = new PosStandard(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
-                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.Master1, db.Master2);
+                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
             }
 

@@ -26,13 +26,36 @@ namespace Simulator
             this.Shown += StartApplication;
         }
 
+        #region Start Application
+
+        private frmWelcome _startScreen;
+
+        private void ShowStartScreen()
+        {
+            _startScreen = new frmWelcome();
+            _startScreen.Show();
+        }
+
+
+        private void HideCover()
+        {
+            _startScreen.Close();
+            _startScreen.Dispose();
+            panCover1.Visible = false;
+        }
+
+        #endregion
+
+
         private void StartApplication(object sender, EventArgs e)
         {
+            ShowStartScreen();
             CreateDb();
             CreateWarehouse(_dbContext);
             CreateProductionGenerator(_dbContext);
             CreatePlc();
             CreateCabinet();
+            HideCover();
         }
 
 
@@ -54,6 +77,7 @@ namespace Simulator
             _warehouse = new Warehouse(dbContext);
             _warehouse.SetNeighbours();
             _warehouse.CreatePositions(tabLevel0, tabLevel1);
+            _warehouse.CreateBayNumbers(tabLevel0, tabLevel1);
             _warehouse.MapMasters();
             _warehouse.MapPallets();
         }

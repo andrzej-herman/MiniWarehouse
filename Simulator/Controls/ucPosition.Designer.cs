@@ -30,9 +30,9 @@
         {
             this.panMain = new System.Windows.Forms.Panel();
             this.panNumber = new System.Windows.Forms.Panel();
-            this.lblNumber = new System.Windows.Forms.Label();
             this.panPallet = new System.Windows.Forms.Panel();
             this.lblPallet = new System.Windows.Forms.Label();
+            this.lblNumber = new System.Windows.Forms.Label();
             this.panMain.SuspendLayout();
             this.panNumber.SuspendLayout();
             this.panPallet.SuspendLayout();
@@ -57,17 +57,6 @@
             this.panNumber.Size = new System.Drawing.Size(25, 25);
             this.panNumber.TabIndex = 1;
             // 
-            // lblNumber
-            // 
-            this.lblNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNumber.Location = new System.Drawing.Point(0, 0);
-            this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(25, 25);
-            this.lblNumber.TabIndex = 0;
-            this.lblNumber.Text = "8888";
-            this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panPallet
             // 
             this.panPallet.BackColor = System.Drawing.Color.SkyBlue;
@@ -88,6 +77,17 @@
             this.lblPallet.TabIndex = 0;
             this.lblPallet.Text = "W";
             this.lblPallet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNumber.Location = new System.Drawing.Point(0, 0);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(25, 25);
+            this.lblNumber.TabIndex = 0;
+            this.lblNumber.Text = "8888";
+            this.lblNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucPosition
             // 

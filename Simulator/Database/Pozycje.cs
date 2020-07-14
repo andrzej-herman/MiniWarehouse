@@ -30,8 +30,7 @@ namespace Simulator.Database
         public int AktualnyKierunek { get; set; }
         public string Zatoka { get; set; }
         public string Rampa { get; set; }
-        public bool Master1 { get; set; }
-        public bool Master2 { get; set; }
+        public Nullable<int> MasterId { get; set; }
         public Nullable<int> PaletaId { get; set; }
     }
 }

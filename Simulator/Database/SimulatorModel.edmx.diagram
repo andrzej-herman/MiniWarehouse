@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="SimulatorModel.Produkty" Width="2.125" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="SimulatorModel.FK_Partie_Produkty" ManuallyRouted="false" />
         <AssociationConnector Association="SimulatorModel.FK_PartiePalety_Partie" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SimulatorModel.Pozycje" Width="2" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="SimulatorModel.Pozycje" Width="2.75" PointX="3.375" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

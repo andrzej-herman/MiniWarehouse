@@ -28,7 +28,7 @@ namespace Simulator.WarehouseData
         public string Bay { get; set; }
         public string Ramp { get; set; }
         public int? Pid { get; set; }
-        public string M { get; set; }
+        public int? MId { get; set; }
         public Pallet Pallet { get; set; }
         public Master Master { get; set; }
         public Dictionary<Site, Position> Neighbours { get; set; }
@@ -50,7 +50,7 @@ namespace Simulator.WarehouseData
         }
 
         public Position(int id, int width, int height, int x, int y, int level, PositionType type, 
-                        int? forward, int? back, int? left, int? right, int? up, int? down, string bay, string ramp, int? pid, bool m1, bool m2)
+                        int? forward, int? back, int? left, int? right, int? up, int? down, string bay, string ramp, int? pid, int? mid)
         {
             Id = id;
             Width = width;
@@ -68,7 +68,7 @@ namespace Simulator.WarehouseData
             Bay = bay;
             Ramp = ramp;
             Pid = pid;
-            M = m1 ? "M1" : m2 ? "M2" : null;
+            MId = mid;
             Init();
         }
 

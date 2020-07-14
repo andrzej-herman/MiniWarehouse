@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ucBaySign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucBaySign.Designer.cs">
+      <DependentUpon>ucBaySign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWelcome.Designer.cs">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Helpers\Rand.cs" />
     <Compile Include="Siemens\Plc.cs" />
@@ -156,7 +168,12 @@
     <Compile Include="WarehouseData\Positions\PosRampEnter.cs" />
     <Compile Include="WarehouseData\Positions\PosRepair.cs" />
     <Compile Include="WarehouseData\Positions\PosStandard.cs" />
+    <Compile Include="WarehouseData\Positions\PosWarehouse.cs" />
+    <Compile Include="WarehouseData\Positions\PosWarehouseEnter.cs" />
     <Compile Include="WarehouseData\Warehouse.cs" />
+    <EmbeddedResource Include="Controls\ucBaySign.resx">
+      <DependentUpon>ucBaySign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucButton.resx">
       <DependentUpon>ucButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWelcome.resx">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
