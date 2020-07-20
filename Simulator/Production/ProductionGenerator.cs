@@ -1,8 +1,10 @@
-﻿using Simulator.Database;
+﻿using Simulator.Controls;
+using Simulator.Database;
 using Simulator.Helpers;
 using Simulator.WarehouseData;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
@@ -200,7 +202,8 @@ namespace Simulator.Production
                         Type = (PalletType)Convert.ToInt32(bp.Barcode.Substring(2, 1)),
                         BatchNumber = _activeBatch.BatchNumber,
                         ExpirationDate = GetExpirationDate(bp.Barcode),
-                        ProductName = GetProductName(bp.Barcode)
+                        ProductName = GetProductName(bp.Barcode),
+                        Display = new ucPallet()
                     };
 
                     var db = Mapper.PalletToDbPalet(pallet);

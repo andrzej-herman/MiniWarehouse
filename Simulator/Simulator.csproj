@@ -76,6 +76,18 @@
     <Compile Include="Controls\ucDisplay.Designer.cs">
       <DependentUpon>ucDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucMaster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucMaster.Designer.cs">
+      <DependentUpon>ucMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucPallet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucPallet.Designer.cs">
+      <DependentUpon>ucPallet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucPlc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +107,12 @@
       <DependentUpon>ucSignal.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Mapper.cs" />
+    <Compile Include="Database\Mastery.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Misje.cs">
+      <DependentUpon>SimulatorModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Palety.cs">
       <DependentUpon>SimulatorModel.tt</DependentUpon>
     </Compile>
@@ -153,9 +171,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WarehouseData\Master.cs" />
+    <Compile Include="WarehouseData\Mission.cs" />
     <Compile Include="WarehouseData\Pallet.cs" />
     <Compile Include="WarehouseData\Position.cs" />
-    <Compile Include="WarehouseData\Positions\PosBattery.cs" />
+    <Compile Include="WarehouseData\Positions\PosBatteryOne.cs" />
+    <Compile Include="WarehouseData\Positions\PosBatteryZero.cs" />
     <Compile Include="WarehouseData\Positions\PosControl.cs" />
     <Compile Include="WarehouseData\Positions\PosCross.cs" />
     <Compile Include="WarehouseData\Positions\PosInspection.cs" />
@@ -179,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucDisplay.resx">
       <DependentUpon>ucDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucMaster.resx">
+      <DependentUpon>ucMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPlc.resx">
       <DependentUpon>ucPlc.cs</DependentUpon>

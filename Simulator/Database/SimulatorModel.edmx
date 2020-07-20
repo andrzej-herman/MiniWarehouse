@@ -5,6 +5,27 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="SimulatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mastery">
+          <Key>
+            <PropertyRef Name="MasterId" />
+          </Key>
+          <Property Name="MasterId" Type="int" Nullable="false" />
+          <Property Name="Poziom" Type="int" Nullable="false" />
+          <Property Name="Capacity" Type="int" Nullable="false" />
+          <Property Name="AktywnaMisjaId" Type="int" />
+        </EntityType>
+        <EntityType Name="Misje">
+          <Key>
+            <PropertyRef Name="MisjaId" />
+          </Key>
+          <Property Name="MisjaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypMisji" Type="int" Nullable="false" />
+          <Property Name="PozycjaOdbioruId" Type="int" Nullable="false" />
+          <Property Name="PozycjaDostarczeniaId" Type="int" Nullable="false" />
+          <Property Name="PaletaId" Type="int" Nullable="false" />
+          <Property Name="MasterId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Palety">
           <Key>
             <PropertyRef Name="PaletaId" />
@@ -95,6 +116,8 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SimulatorModelStoreContainer">
+          <EntitySet Name="Mastery" EntityType="Self.Mastery" Schema="magazyn" store:Type="Tables" />
+          <EntitySet Name="Misje" EntityType="Self.Misje" Schema="magazyn" store:Type="Tables" />
           <EntitySet Name="Palety" EntityType="Self.Palety" Schema="magazyn" store:Type="Tables" />
           <EntitySet Name="Pozycje" EntityType="Self.Pozycje" Schema="magazyn" store:Type="Tables" />
           <EntitySet Name="Partie" EntityType="Self.Partie" Schema="produkcja" store:Type="Tables" />
@@ -197,6 +220,8 @@
             <End Role="PartiePalety" EntitySet="PartiePalety" />
           </AssociationSet>
           <EntitySet Name="Pozycje" EntityType="SimulatorModel.Pozycje" />
+          <EntitySet Name="Mastery" EntityType="SimulatorModel.Mastery" />
+          <EntitySet Name="Misje" EntityType="SimulatorModel.Misje" />
         </EntityContainer>
         <EntityType Name="Pozycje">
           <Key>
@@ -220,6 +245,27 @@
           <Property Name="Rampa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MasterId" Type="Int32" />
           <Property Name="PaletaId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mastery">
+          <Key>
+            <PropertyRef Name="MasterId" />
+          </Key>
+          <Property Name="MasterId" Type="Int32" Nullable="false" />
+          <Property Name="Poziom" Type="Int32" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" Nullable="false" />
+          <Property Name="AktywnaMisjaId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Misje">
+          <Key>
+            <PropertyRef Name="MisjaId" />
+          </Key>
+          <Property Name="MisjaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypMisji" Type="Int32" Nullable="false" />
+          <Property Name="PozycjaOdbioruId" Type="Int32" Nullable="false" />
+          <Property Name="PozycjaDostarczeniaId" Type="Int32" Nullable="false" />
+          <Property Name="PaletaId" Type="Int32" Nullable="false" />
+          <Property Name="MasterId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -294,6 +340,29 @@
                 <ScalarProperty Name="Wysokosc" ColumnName="Wysokosc" />
                 <ScalarProperty Name="Szerokosc" ColumnName="Szerokosc" />
                 <ScalarProperty Name="PozycjaId" ColumnName="PozycjaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mastery">
+            <EntityTypeMapping TypeName="SimulatorModel.Mastery">
+              <MappingFragment StoreEntitySet="Mastery">
+                <ScalarProperty Name="AktywnaMisjaId" ColumnName="AktywnaMisjaId" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Misje">
+            <EntityTypeMapping TypeName="SimulatorModel.Misje">
+              <MappingFragment StoreEntitySet="Misje">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="PozycjaDostarczeniaId" ColumnName="PozycjaDostarczeniaId" />
+                <ScalarProperty Name="PozycjaOdbioruId" ColumnName="PozycjaOdbioruId" />
+                <ScalarProperty Name="TypMisji" ColumnName="TypMisji" />
+                <ScalarProperty Name="MisjaId" ColumnName="MisjaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

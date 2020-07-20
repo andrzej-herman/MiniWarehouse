@@ -198,7 +198,7 @@ namespace Simulator
 
         private void RefreshCabinet(bool turnoff = false)
         {
-            _cabinet.RefreshState(_plc, _productionGenerator, turnoff);
+            _cabinet.RefreshState(_warehouse, _plc, _productionGenerator, turnoff);
         }
 
         private void CommandReleased(object sender, Helpers.ActionType command)
@@ -246,6 +246,8 @@ namespace Simulator
 
         #endregion
 
+
+        // 52, 112, 53, 700, 701, 702, 703
 
     }
 }

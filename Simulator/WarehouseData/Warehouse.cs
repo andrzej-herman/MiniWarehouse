@@ -13,7 +13,14 @@ namespace Simulator.WarehouseData
     {
         private readonly SimulatorContext _dbContext;
         private List<Position> _positions;
+        private List<Master> _masters;
+        private List<Mission> _missions;
         private List<Pallet> _pallets;
+
+        public List<Master> Masters
+        {
+            get { return _masters; }
+        }
 
         public List<Position> Positions
         {
@@ -31,7 +38,10 @@ namespace Simulator.WarehouseData
             _dbContext = context;
             GetPositions();
             GetPallets();
+            GetMissions();
+            GetMasters();      
         }
+
 
 
         public void CreateBayNumbers(TabPage level_0, TabPage level_1)
@@ -100,7 +110,14 @@ namespace Simulator.WarehouseData
 
         public void MapMasters()
         {
-
+            foreach (var pos in _positions)
+            {
+                if (pos.Mid.HasValue)
+                {
+                    var master = _masters.FirstOrDefault(m => m.Id == pos.Mid);
+                    pos.MapMaster(master, false);
+                }
+            }
         }
 
         public void MapPallets()
@@ -164,5 +181,25 @@ namespace Simulator.WarehouseData
             var db = _dbContext.Palety.OrderBy(p => p.PaletaId).ToList();
             _pallets = db.Select(p => Mapper.DbPalletToPalet(p)).ToList();
         }
+
+        private void GetMissions()
+        {
+            var db = _dbContext.Misje.Where(miss => miss.Status != 2).OrderBy(miss => miss.MisjaId).ToList();
+            _missions = db.Select(m => Mapper.DbMissionToMission(m)).ToList();
+        }
+
+        private void GetMasters()
+        {
+            var db = _dbContext.Mastery.OrderBy(m => m.MasterId).ToList();
+            _masters = db.Select(m => Mapper.DbMasterToMaster(m)).ToList();
+            foreach (var master in _masters)
+            {
+                var missions = _missions.Where(m => m.MasterId == master.Id).ToList();
+                master.Missions = missions;
+                master.ActiveMission = _missions.FirstOrDefault(mis => mis.Id == master.ActiveMissionId);
+            }
+        }
+
+
     }
 }

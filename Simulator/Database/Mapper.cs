@@ -1,4 +1,5 @@
-﻿using Simulator.Helpers;
+﻿using Simulator.Controls;
+using Simulator.Helpers;
 using Simulator.Production;
 using Simulator.WarehouseData;
 using Simulator.WarehouseData.Positions;
@@ -81,31 +82,6 @@ namespace Simulator.Database
             };
         }
 
-
-        /*
- *     OK [PozycjaId]
-       OK [Szerokosc]
-       OK [Wysokosc]
-       OK [X]
-       OK [Y]
-       OK [Poziom]
-       OK [Typ]
-       OK [Przod]
-       OK [Tyl]
-       OK [Lewo]
-       OK [Prawo]
-       OK [Gora]
-       OK [Dol]
-       OK [AktualnyKierunek]
-       OK [Zatoka]
-       OK [Rampa]
-      ,[Master1]
-      ,[Master2]
-      ,[PaletaId]
-*/
-
-
-
         public static Position DbPositionToPosition(Pozycje db)
         {
             Position result;
@@ -168,8 +144,12 @@ namespace Simulator.Database
                     result = new PosMaster(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
-                case PositionType.Battery:
-                    result = new PosBattery(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                case PositionType.BatteryZero:
+                    result = new PosBatteryZero(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
+                       db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
+                    break;
+                case PositionType.BatteryOne:
+                    result = new PosBatteryOne(db.PozycjaId, db.Szerokosc, db.Wysokosc, db.X, db.Y, db.Poziom, type,
                        db.Przod, db.Tyl, db.Lewo, db.Prawo, db.Gora, db.Dol, db.Zatoka, db.Rampa, db.PaletaId, db.MasterId);
                     break;
                 default:
@@ -181,5 +161,36 @@ namespace Simulator.Database
             return result;
         }
 
+        public static Mission DbMissionToMission(Misje db)
+        {
+            return new Mission
+            {
+                Id = db.MisjaId,
+                Type = (MissionType)db.TypMisji,
+                PickPositionId = db.PozycjaOdbioruId,
+                DropPositionId = db.PozycjaDostarczeniaId,
+                PalletId = db.PaletaId,
+                MasterId = db.MasterId,
+                Status = (MissionStatus)db.Status
+            };
+        }
+
+        public static Master DbMasterToMaster(Mastery db)
+        {
+            return new Master
+            {
+                Id = db.MasterId,
+                Level = (Level)db.Poziom,
+                Capacity = db.Capacity,
+                ActiveMissionId = db.AktywnaMisjaId,
+                Missions = new List<Mission>(),
+                Display = new ucMaster()
+            };
+        }
     }
 }
+
+
+
+
+

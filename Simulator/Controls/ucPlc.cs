@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Simulator.Helpers;
 using Simulator.Siemens;
 using Simulator.Production;
+using Simulator.WarehouseData;
 
 namespace Simulator.Controls
 {
@@ -23,7 +24,7 @@ namespace Simulator.Controls
             InitializeComponent();
         }
 
-        public void RefreshState(Plc plc, ProductionGenerator productionGenarator, bool turnOff = false)
+        public void RefreshState(Warehouse warehouse, Plc plc, ProductionGenerator productionGenarator, bool turnOff = false)
         {
             if (turnOff)
             {
@@ -54,6 +55,12 @@ namespace Simulator.Controls
                     sigBatch.Red();
                     statBatch.SetValue("--/--", true);
                 }
+
+
+                statMaster1.SetValue(warehouse.Masters[0].BatteryLevel, true);
+                statMaster2.SetValue(warehouse.Masters[1].BatteryLevel, true);
+                statMaster3.SetValue(warehouse.Masters[2].BatteryLevel, true); 
+                statMaster4.SetValue(warehouse.Masters[3].BatteryLevel, true);
             }       
         }
 
@@ -77,6 +84,14 @@ namespace Simulator.Controls
             butProductionOff.Activated += SetProductionOff;
             statBatch.SetName("STATUS");
             statBatch.SetValue("--/--", false);
+            statMaster1.SetName("MASTER 1");
+            statMaster2.SetName("MASTER 2");
+            statMaster3.SetName("MASTER 3");
+            statMaster4.SetName("MASTER 4");
+            statMaster1.SetValue("-----", false);
+            statMaster2.SetValue("-----", false);
+            statMaster3.SetValue("-----", false);
+            statMaster4.SetValue("-----", false);
         }
 
         private void SetProductionOff(object sender)

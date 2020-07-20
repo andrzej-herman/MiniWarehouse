@@ -30,5 +30,7 @@ namespace Simulator.Database
         public virtual DbSet<PartiePalety> PartiePalety { get; set; }
         public virtual DbSet<Produkty> Produkty { get; set; }
         public virtual DbSet<Pozycje> Pozycje { get; set; }
+        public virtual DbSet<Mastery> Mastery { get; set; }
+        public virtual DbSet<Misje> Misje { get; set; }
     }
 }

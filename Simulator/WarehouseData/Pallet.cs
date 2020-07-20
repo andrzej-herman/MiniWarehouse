@@ -1,4 +1,5 @@
-﻿using Simulator.Helpers;
+﻿using Simulator.Controls;
+using Simulator.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Simulator.WarehouseData
         public DateTime ProductionDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string Destination { get; set; }
+        public ucPallet Display { get; set; }
     }
 }
 

@@ -49,8 +49,10 @@
             this.ucButton4 = new Simulator.Controls.ucButton();
             this.ucButton5 = new Simulator.Controls.ucButton();
             this.ucButton6 = new Simulator.Controls.ucButton();
-            this.ucDisplay1 = new Simulator.Controls.ucDisplay();
-            this.ucDisplay2 = new Simulator.Controls.ucDisplay();
+            this.statMaster1 = new Simulator.Controls.ucDisplay();
+            this.statMaster2 = new Simulator.Controls.ucDisplay();
+            this.statMaster3 = new Simulator.Controls.ucDisplay();
+            this.statMaster4 = new Simulator.Controls.ucDisplay();
             this.SuspendLayout();
             // 
             // statBatch
@@ -242,23 +244,41 @@
             this.ucButton6.Size = new System.Drawing.Size(68, 68);
             this.ucButton6.TabIndex = 21;
             // 
-            // ucDisplay1
+            // statMaster1
             // 
-            this.ucDisplay1.BackColor = System.Drawing.Color.Gainsboro;
-            this.ucDisplay1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ucDisplay1.Location = new System.Drawing.Point(238, 192);
-            this.ucDisplay1.Name = "ucDisplay1";
-            this.ucDisplay1.Size = new System.Drawing.Size(68, 68);
-            this.ucDisplay1.TabIndex = 22;
+            this.statMaster1.BackColor = System.Drawing.Color.Gainsboro;
+            this.statMaster1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statMaster1.Location = new System.Drawing.Point(238, 151);
+            this.statMaster1.Name = "statMaster1";
+            this.statMaster1.Size = new System.Drawing.Size(68, 68);
+            this.statMaster1.TabIndex = 22;
             // 
-            // ucDisplay2
+            // statMaster2
             // 
-            this.ucDisplay2.BackColor = System.Drawing.Color.Gainsboro;
-            this.ucDisplay2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ucDisplay2.Location = new System.Drawing.Point(312, 192);
-            this.ucDisplay2.Name = "ucDisplay2";
-            this.ucDisplay2.Size = new System.Drawing.Size(68, 68);
-            this.ucDisplay2.TabIndex = 23;
+            this.statMaster2.BackColor = System.Drawing.Color.Gainsboro;
+            this.statMaster2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statMaster2.Location = new System.Drawing.Point(312, 151);
+            this.statMaster2.Name = "statMaster2";
+            this.statMaster2.Size = new System.Drawing.Size(68, 68);
+            this.statMaster2.TabIndex = 23;
+            // 
+            // statMaster3
+            // 
+            this.statMaster3.BackColor = System.Drawing.Color.Gainsboro;
+            this.statMaster3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statMaster3.Location = new System.Drawing.Point(238, 225);
+            this.statMaster3.Name = "statMaster3";
+            this.statMaster3.Size = new System.Drawing.Size(68, 68);
+            this.statMaster3.TabIndex = 25;
+            // 
+            // statMaster4
+            // 
+            this.statMaster4.BackColor = System.Drawing.Color.Gainsboro;
+            this.statMaster4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statMaster4.Location = new System.Drawing.Point(312, 225);
+            this.statMaster4.Name = "statMaster4";
+            this.statMaster4.Size = new System.Drawing.Size(68, 68);
+            this.statMaster4.TabIndex = 24;
             // 
             // ucPlc
             // 
@@ -266,8 +286,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.ucDisplay2);
-            this.Controls.Add(this.ucDisplay1);
+            this.Controls.Add(this.statMaster3);
+            this.Controls.Add(this.statMaster4);
+            this.Controls.Add(this.statMaster2);
+            this.Controls.Add(this.statMaster1);
             this.Controls.Add(this.ucButton6);
             this.Controls.Add(this.ucButton5);
             this.Controls.Add(this.ucButton4);
@@ -319,7 +341,9 @@
         private ucButton ucButton4;
         private ucButton ucButton5;
         private ucButton ucButton6;
-        private ucDisplay ucDisplay1;
-        private ucDisplay ucDisplay2;
+        private ucDisplay statMaster1;
+        private ucDisplay statMaster2;
+        private ucDisplay statMaster3;
+        private ucDisplay statMaster4;
     }
 }

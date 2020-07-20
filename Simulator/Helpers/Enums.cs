@@ -55,11 +55,12 @@ namespace Simulator.Helpers
         Inspection = 8,
         Warehouse = 9,
         Master = 10,
-        Battery = 11,
+        BatteryZero = 11,
         Cross = 12,
         Ramp = 13,
         MainEnter = 14,
-        RampEnter = 15
+        RampEnter = 15,
+        BatteryOne = 16
     }
 
     public enum PositionDirection
@@ -72,5 +73,19 @@ namespace Simulator.Helpers
     {
         Zero = 0,
         One = 1
+    }
+
+    public enum MissionType
+    {
+        Technical = 0,
+        Shipping = 1,
+        Order = 2
+    }
+
+    public enum MissionStatus
+    {
+        Planned = 0,
+        Active = 1,
+        Finished = 2
     }
 }

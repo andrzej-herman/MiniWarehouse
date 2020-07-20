@@ -28,11 +28,11 @@ namespace Simulator.WarehouseData
         public string Bay { get; set; }
         public string Ramp { get; set; }
         public int? Pid { get; set; }
-        public int? MId { get; set; }
+        public int? Mid { get; set; }
         public Pallet Pallet { get; set; }
         public Master Master { get; set; }
         public Dictionary<Site, Position> Neighbours { get; set; }
-        private ucPosition Display { get; set; }
+        public ucPosition Display { get; set; }
 
         public virtual bool CanHostPallet
         {                                                              
@@ -68,7 +68,7 @@ namespace Simulator.WarehouseData
             Bay = bay;
             Ramp = ramp;
             Pid = pid;
-            MId = mid;
+            Mid = mid;
             Init();
         }
 
@@ -104,10 +104,6 @@ namespace Simulator.WarehouseData
             Display.MapPallet(p, invoke);
         }
 
-        public virtual void MapMaster(Master p)
-        {
-
-        }
 
         private void RemovePallet()
         {
@@ -126,6 +122,8 @@ namespace Simulator.WarehouseData
             }
         }
 
+        public virtual void MapMaster(Master p, bool invoke) { }
+
         public virtual void Move()
         {
             if (CanMove)
@@ -138,26 +136,3 @@ namespace Simulator.WarehouseData
 
     }
 }
-
-
-/*
- *     OK [PozycjaId]
-       OK [Szerokosc]
-       OK [Wysokosc]
-       OK [X]
-       OK [Y]
-       OK [Poziom]
-       OK [Typ]
-       OK [Przod]
-       OK [Tyl]
-       OK [Lewo]
-       OK [Prawo]
-       OK [Gora]
-       OK [Dol]
-       OK [AktualnyKierunek]
-       OK [Zatoka]
-       OK [Rampa]
-      ,[Master1]
-      ,[Master2]
-      ,[PaletaId]
-*/
