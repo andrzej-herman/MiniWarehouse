@@ -20,7 +20,7 @@ namespace Simulator.Production
         {
             _dbContext = context;
             IsRunning = false;
-            productionTimer = new Timer(5000d);
+            productionTimer = new Timer(6000d);
             productionTimer.Elapsed += ProductionTimer_Elapsed;
             productionTimer.Stop();
             GetProducts();
@@ -81,8 +81,6 @@ namespace Simulator.Production
             sb.Append(exDate.Month.ToString("00"));
             sb.Append(exDate.Day.ToString("00"));
             sb.Append(index.ToString("00000"));
-            var t = sb.ToString();
-            var ile = t.Length;
             return sb.ToString();
         }
 
@@ -202,10 +200,11 @@ namespace Simulator.Production
                         Type = (PalletType)Convert.ToInt32(bp.Barcode.Substring(2, 1)),
                         BatchNumber = _activeBatch.BatchNumber,
                         ExpirationDate = GetExpirationDate(bp.Barcode),
-                        ProductName = GetProductName(bp.Barcode),
-                        Display = new ucPallet()
+                        ProductName = GetProductName(bp.Barcode)
                     };
 
+                    pallet.Display = new ucPallet();
+                    pallet.Display.Init(pallet);
                     var db = Mapper.PalletToDbPalet(pallet);
                     _dbContext.Palety.Add(db);
                     var toRemove = _dbContext.PartiePalety.First(tr => tr.PaletaId == bp.Id);

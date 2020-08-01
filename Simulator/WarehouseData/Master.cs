@@ -23,7 +23,7 @@ namespace Simulator.WarehouseData
             get 
             {
                 var level = Convert.ToInt32(Convert.ToDouble(Capacity) / 5d);
-                return $"{level.ToString()}%";
+                return $"{level}%";
             }
         }
 
@@ -50,11 +50,12 @@ namespace Simulator.WarehouseData
 
         public void Charge()
         {
-            Capacity += 10;
+            Capacity += 5;
             if (Capacity > 500)
                 Capacity = 500;
 
             UpdateCapacity();
+            UpdateCharging();
         }
 
         

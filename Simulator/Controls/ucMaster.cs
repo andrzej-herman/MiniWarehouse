@@ -25,33 +25,39 @@ namespace Simulator.Controls
 
         public void UpdateCapacity(Master m)
         {
-            if (m.Capacity >= 375)
-                panCapacity.BackColor = Color.Lime;
-            else if (m.Capacity >= 250 && m.Capacity < 375)
-                panCapacity.BackColor = Color.LightGreen;
-            else if (m.Capacity >= 125 && m.Capacity < 250)
-                panCapacity.BackColor = Color.Yellow;
-            else
-                panCapacity.BackColor = Color.Red;
+            this.Invoke(new Action(delegate ()
+            {
+                if (m.Capacity >= 375)
+                    panCapacity.BackColor = Color.Lime;
+                else if (m.Capacity >= 250 && m.Capacity < 375)
+                    panCapacity.BackColor = Color.LightGreen;
+                else if (m.Capacity >= 125 && m.Capacity < 250)
+                    panCapacity.BackColor = Color.Yellow;
+                else
+                    panCapacity.BackColor = Color.Red;
 
-            int szer = Convert.ToInt32(Convert.ToDouble(m.Capacity) / 7.69d);
-            panCapacity.SetBounds(0, 0, szer, 5);
-            panel1.BringToFront();
-            panel2.BringToFront();
-            panCapacity.BringToFront();
+                int szer = Convert.ToInt32(Convert.ToDouble(m.Capacity) / 7.69d);
+                panCapacity.SetBounds(0, 0, szer, 5);
+                panel1.BringToFront();
+                panel2.BringToFront();
+                panCapacity.BringToFront();
+            }));
         }
 
         public void UpdateCharging(Master m)
         {
-            if (m.CurrentPosition.Type != PositionType.BatteryOne && m.CurrentPosition.Type != PositionType.BatteryZero)
-                panCharge.BackColor = Color.Gray;
-            else
+            this.Invoke(new Action(delegate ()
             {
-                if (m.Capacity == 500)
-                    panCharge.BackColor = Color.Lime;
+                if (m.CurrentPosition.Type != PositionType.BatteryOne && m.CurrentPosition.Type != PositionType.BatteryZero)
+                    panCharge.BackColor = Color.Gray;
                 else
-                    panCharge.BackColor = Color.Red;
-            }
+                {
+                    if (m.Capacity == 500)
+                        panCharge.BackColor = Color.Lime;
+                    else
+                        panCharge.BackColor = Color.Red;
+                }
+            }));
         }
     }
 }

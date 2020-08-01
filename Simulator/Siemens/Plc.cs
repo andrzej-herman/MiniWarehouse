@@ -10,21 +10,31 @@ namespace Simulator.Siemens
 {
     public class Plc
     {
-        private Timer plcTimer;
+        private Timer positionsTimer;
+        private Timer masterTimer;
         public delegate void Activation(object sender);
-        public event Activation Time;
+        public event Activation PositionTime;
+        public event Activation MasterTime;
 
         public Plc()
         {
             State = PlcState.OFF;
-            plcTimer = new Timer(2000d);
-            plcTimer.Elapsed += PlcTimer_Elapsed;
-            plcTimer.Stop();
+            positionsTimer = new Timer(2000d);
+            masterTimer = new Timer(1000d);
+            positionsTimer.Elapsed += PositionTimer_Elapsed;
+            masterTimer.Elapsed += MasterTimer_Elapsed;
+            positionsTimer.Stop();
+            masterTimer.Stop();
         }
 
-        private void PlcTimer_Elapsed(object sender, ElapsedEventArgs e)
+        private void MasterTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Time?.Invoke(this);
+            MasterTime?.Invoke(this);
+        }
+
+        private void PositionTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            PositionTime?.Invoke(this);
         }
 
         public PlcState State { get; set; }
@@ -32,23 +42,35 @@ namespace Simulator.Siemens
         public void TurnOn()
         {
             State = PlcState.ON;
-            plcTimer.Start();
+            positionsTimer.Start();
+            masterTimer.Start();
         }
 
         public void TurnOff()
         {
             State = PlcState.OFF;
-            plcTimer.Stop();
+            positionsTimer.Stop();
+            masterTimer.Stop();
         }
 
-        public void Enable()
+        public void EnablePositions()
         {
-            plcTimer.Enabled = true;
+            positionsTimer.Enabled = true;
         }
 
-        public void Disable()
+        public void DisablePositions()
         {
-            plcTimer.Enabled = false;
+            positionsTimer.Enabled = false;
+        }
+
+        public void EnableMaster()
+        {
+            masterTimer.Enabled = true;
+        }
+
+        public void DisableMaster()
+        {
+            masterTimer.Enabled = false;
         }
 
     }

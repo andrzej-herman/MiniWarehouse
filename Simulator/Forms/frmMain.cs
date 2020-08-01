@@ -44,9 +44,6 @@ namespace Simulator
             panCover1.Visible = false;
         }
 
-        #endregion
-
-
         private void StartApplication(object sender, EventArgs e)
         {
             ShowStartScreen();
@@ -58,6 +55,7 @@ namespace Simulator
             HideCover();
         }
 
+        #endregion
 
         #region DbContext
 
@@ -78,8 +76,8 @@ namespace Simulator
             _warehouse.SetNeighbours();
             _warehouse.CreatePositions(tabLevel0, tabLevel1);
             _warehouse.CreateBayNumbers(tabLevel0, tabLevel1);
-            _warehouse.MapMasters();
-            _warehouse.MapPallets();
+            _warehouse.ShowMasters();
+            _warehouse.ShowPallets();
         }
 
         #endregion
@@ -90,15 +88,24 @@ namespace Simulator
         private void CreatePlc()
         {
             _plc = new Plc();
-            _plc.Time += Plc_Run;
+            _plc.PositionTime += Positions_Run;
+            _plc.MasterTime += Master_Run;
         }
 
-        private void Plc_Run(object sender)
+        private void Master_Run(object sender)
         {
-            _plc.Disable();
-            _warehouse.Move();
+            _plc.DisableMaster();
+            _warehouse.MoveMasters();
             RefreshCabinet();
-            _plc.Enable();
+            _plc.EnableMaster();
+        }
+
+        private void Positions_Run(object sender)
+        {
+            _plc.DisablePositions();
+            _warehouse.MovePositions();
+            RefreshCabinet();
+            _plc.EnablePositions();
         }
 
         private void PowerOn()
@@ -150,7 +157,7 @@ namespace Simulator
                 var pallet = _productionGenerator.CreateNewPallet();
                 if (pallet != null)
                 {
-                    position.MapPallet(pallet, true);
+                    position.MapPallet(pallet);
                     RefreshCabinet();
                 }
             }
@@ -246,8 +253,6 @@ namespace Simulator
 
         #endregion
 
-
-        // 52, 112, 53, 700, 701, 702, 703
 
     }
 }

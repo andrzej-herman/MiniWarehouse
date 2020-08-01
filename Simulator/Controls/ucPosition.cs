@@ -68,82 +68,82 @@ namespace Simulator.Controls
 
         public void MapMaster(Master master)
         {
-            master.UpdateCapacity();
-            master.UpdateCharging();
             master.Display.SetBounds(0, 0, 65, 65);
             this.Controls.Add(master.Display);
             master.Display.BringToFront();
             this.BringToFront();
         }
 
-
-        private void ShowPallet(Pallet p)
+        private void DisplayPallet(Pallet p)
         {
-            //Production = 1,
-            //Standard = 2,
-            //WarehouseEnter = 3,
-            //LiftEnter = 4,
-            //Lift = 5,             ==> OK
-            //Control = 6,          ==> OK
-            //Repair = 7,           ==> OK
-            //Inspection = 8,       ==> OK
-            //Warehouse = 9,
-            //Master = 10,
-            //BatteryZero = 11,
-            //Cross = 12,
-            //Ramp = 13,
-            //MainEnter = 14,
-            //RampEnter = 15,
-            //BatteryOne = 16
-
-            //if (_pos.Type == PositionType.Control || _pos.Type == PositionType.Repair || _pos.Type == PositionType.Inspection || _pos.Type == PositionType.Lift)
-            //{
-            //    panPallet.Dock = DockStyle.None;
-            //    panPallet.SetBounds(10, 10, 25, 25);
-            //}
-            //else
-            //    panPallet.Dock = DockStyle.Fill;
-
-            //lblPallet.Text = p.Symbol;
-            //panPallet.BackColor = lblPallet.BackColor = p.Type == PalletType.HR ? Color.LightPink : Color.LightSkyBlue;
-            //if (p.State != PalletState.OK)
-            //    panPallet.BackColor = lblPallet.BackColor = Color.Red;
-
-            //panPallet.BringToFront();
+            switch (_pos.Type)
+            {
+                case PositionType.Lift:
+                    p.Display.Dock = DockStyle.None;
+                    p.Display.SetBounds(5, 5, 25, 25);
+                    this.Controls.Add(p.Display);
+                    p.Display.BringToFront();
+                    break;
+                case PositionType.Control:
+                case PositionType.Repair:
+                case PositionType.Inspection:
+                    p.Display.Dock = DockStyle.None;
+                    p.Display.SetBounds(10, 10, 25, 25);
+                    this.Controls.Add(p.Display);
+                    p.Display.BringToFront();
+                    break;
+                case PositionType.Master:
+                    break;
+                case PositionType.BatteryZero:
+                    break;
+                case PositionType.BatteryOne:
+                    break;
+                case PositionType.Production:
+                case PositionType.Standard:
+                case PositionType.Cross:
+                case PositionType.WarehouseEnter:
+                case PositionType.LiftEnter:
+                case PositionType.Warehouse:
+                case PositionType.Ramp:
+                case PositionType.MainEnter:
+                case PositionType.RampEnter:
+                default:
+                    p.Display.Dock = DockStyle.Fill;
+                    this.Controls.Add(p.Display);
+                    p.Display.BringToFront();
+                    break;
+            }
         }
 
 
-        public void MapPallet(Pallet p, bool invoke)
+        public void ShowPallet(Pallet p)
         {
-            //if (invoke)
-            //{
-            //    lblPallet.Invoke(new Action(delegate ()
-            //    {
-            //        ShowPallet(p);
-            //    }));
-            //}
-            //else
-            //    ShowPallet(p);
+            DisplayPallet(p);
         }
+
+
+        public void MapPallet(Pallet p)
+        {
+            this.Invoke(new Action(delegate ()
+            {
+                DisplayPallet(p);
+            }));
+        }
+
+
 
         public void RemovePallet()
         {
-            //if (_numberVisible)
-            //{
-            //    panNumber.Invoke(new Action(delegate ()
-            //    {
-            //        panNumber.BringToFront();
-            //    }));
-            //}
-            //else
-            //{
-            //    panMain.Invoke(new Action(delegate ()
-            //    {
-            //        panMain.BringToFront();
-            //    }));
-            //}
-        }
+            this.Invoke(new Action(delegate ()
+            {
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (ctrl is ucPallet)
+                        this.Controls.Remove(ctrl);
+                }
 
+            }));      
+        }
 
         public void ShowNumber()
         {

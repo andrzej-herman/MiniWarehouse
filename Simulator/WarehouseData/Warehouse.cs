@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Simulator.Helpers;
 
 namespace Simulator.WarehouseData
 {
@@ -16,6 +17,27 @@ namespace Simulator.WarehouseData
         private List<Master> _masters;
         private List<Mission> _missions;
         private List<Pallet> _pallets;
+        private List<Position> _palletPositions
+        {
+            get 
+            {
+                return _positions.Where(p => p.Type != PositionType.Master
+                         && p.Type != PositionType.BatteryOne
+                         && p.Type != PositionType.BatteryZero)
+                         .OrderByDescending(p => p.Id).ToList(); 
+            }
+        }
+
+        private List<Position> _masterPositions
+        {
+            get
+            {
+                return _positions.Where(p => p.Type == PositionType.Master
+                         || p.Type == PositionType.BatteryOne
+                         || p.Type == PositionType.BatteryZero)
+                        .OrderByDescending(p => p.Id).ToList();
+            }
+        }
 
         public List<Master> Masters
         {
@@ -41,8 +63,6 @@ namespace Simulator.WarehouseData
             GetMissions();
             GetMasters();      
         }
-
-
 
         public void CreateBayNumbers(TabPage level_0, TabPage level_1)
         {
@@ -108,33 +128,43 @@ namespace Simulator.WarehouseData
             }
         }
 
-        public void MapMasters()
+        public void ShowMasters()
         {
             foreach (var pos in _positions)
             {
                 if (pos.Mid.HasValue)
                 {
                     var master = _masters.FirstOrDefault(m => m.Id == pos.Mid);
-                    pos.MapMaster(master, false);
+                    pos.ShowMaster(master);
                 }
             }
         }
 
-        public void MapPallets()
+
+        public void ShowPallets()
         {
             foreach (var pos in _positions)
             {
                 if (pos.Pid.HasValue)
                 {
                     var pallet = _pallets.FirstOrDefault(p => p.Id == pos.Pid);
-                    pos.MapPallet(pallet, false);
+                    pos.ShowPallet(pallet);
                 }
             }
         }
 
-        public void Move()
+
+        public void MoveMasters()
         {
-            foreach (var pos in _positions.OrderByDescending(p => p.Id).ToList())
+            foreach (var pos in _masterPositions)
+            {
+                pos.Move();
+            }
+        }
+
+        public void MovePositions()
+        {
+            foreach (var pos in _palletPositions)
             {
                 pos.Move();
             }
@@ -164,7 +194,19 @@ namespace Simulator.WarehouseData
                     _dbContext.Pozycje.FirstOrDefault(p => p.PozycjaId == pos.Id).PaletaId = pos.Pallet.Id;
                 else
                     _dbContext.Pozycje.FirstOrDefault(p => p.PozycjaId == pos.Id).PaletaId = null;
+
+                if (pos.Master != null)
+                    _dbContext.Pozycje.FirstOrDefault(p => p.PozycjaId == pos.Id).MasterId = pos.Master.Id;
+                else
+                    _dbContext.Pozycje.FirstOrDefault(p => p.PozycjaId == pos.Id).MasterId = null;
+
             }
+
+            foreach (var master in _masters)
+            {
+                _dbContext.Mastery.FirstOrDefault(m => m.MasterId == master.Id).Capacity = master.Capacity;
+            }
+
 
             _dbContext.SaveChanges();
         }

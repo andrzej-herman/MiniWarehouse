@@ -16,13 +16,13 @@ namespace Simulator.WarehouseData.Positions
 
         }
 
-        public override void MapMaster(Master master, bool invoke)
+        public override void ShowMaster(Master master)
         {
             Master = master;
             master.SetCurrentPosition(this);
+            Display.MapMaster(master);
             master.UpdateCapacity();
             master.UpdateCharging();
-            Display.MapMaster(master);
         }
     }
 }

@@ -28,10 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSymbol.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSymbol.Location = new System.Drawing.Point(0, 0);
+            this.lblSymbol.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(25, 25);
+            this.lblSymbol.TabIndex = 0;
+            this.lblSymbol.Text = "W";
+            this.lblSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ucPallet
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblSymbol);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "ucPallet";
+            this.Size = new System.Drawing.Size(25, 25);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblSymbol;
     }
 }

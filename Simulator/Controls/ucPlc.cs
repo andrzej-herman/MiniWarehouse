@@ -113,5 +113,10 @@ namespace Simulator.Controls
         {
             Activated?.Invoke(this, ActionType.POWER_OFF);
         }
+
+        private void butPowerOff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

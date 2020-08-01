@@ -98,10 +98,17 @@ namespace Simulator.WarehouseData
             Display.HideNumber();
         }
 
-        public void MapPallet(Pallet p, bool invoke)
+
+        public virtual void ShowPallet(Pallet p)
         {
             Pallet = p;
-            Display.MapPallet(p, invoke);
+            Display.ShowPallet(p);
+        }
+
+        public virtual void MapPallet(Pallet p)
+        {
+            Pallet = p;
+            Display.MapPallet(p);
         }
 
 
@@ -122,13 +129,15 @@ namespace Simulator.WarehouseData
             }
         }
 
-        public virtual void MapMaster(Master p, bool invoke) { }
+        public virtual void ShowMaster(Master p) { }
+
+        public virtual void MapMaster(Master p) { }
 
         public virtual void Move()
         {
             if (CanMove)
             {
-                Neighbours[Site.Forward].MapPallet(Pallet, true);
+                Neighbours[Site.Forward].MapPallet(Pallet);
                 RemovePallet();
             }
         }

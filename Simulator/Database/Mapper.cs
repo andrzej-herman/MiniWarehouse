@@ -50,8 +50,7 @@ namespace Simulator.Database
         public static Pallet DbPalletToPalet(Palety db)
         {
             PalletType type = (PalletType)Convert.ToInt32(db.KodKreskowy.Substring(2, 1));
-
-            return new Pallet
+            var pallet = new Pallet
             {
                 Id = db.PaletaId,
                 Symbol = db.Oznaczenie,
@@ -64,6 +63,11 @@ namespace Simulator.Database
                 State = (PalletState)db.Stan,
                 Type = type
             };
+
+            pallet.Display = new ucPallet();
+            pallet.Display.Init(pallet);
+            return pallet;
+  
         }
 
         public static Palety PalletToDbPalet(Pallet p)

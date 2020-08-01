@@ -203,6 +203,9 @@
     <EmbeddedResource Include="Controls\ucMaster.resx">
       <DependentUpon>ucMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucPallet.resx">
+      <DependentUpon>ucPallet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPlc.resx">
       <DependentUpon>ucPlc.cs</DependentUpon>
     </EmbeddedResource>

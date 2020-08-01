@@ -21,6 +21,12 @@ namespace Simulator.WarehouseData
         public DateTime ExpirationDate { get; set; }
         public string Destination { get; set; }
         public ucPallet Display { get; set; }
+
+        public void InitDisplay()
+        {
+            Display = new ucPallet();
+            Display.Init(this);
+        }
     }
 }
 
