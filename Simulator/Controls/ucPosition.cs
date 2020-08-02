@@ -16,14 +16,12 @@ namespace Simulator.Controls
     public partial class ucPosition : UserControl
     {
         private Position _pos;
-        private bool _numberVisible = false;
 
         public ucPosition(Position pos)
         {
             InitializeComponent();
             lblCharge.Dock = lblNumber.Dock = DockStyle.Fill;
             _pos = pos;
-            _numberVisible = false;
         }
 
         public void Init(TabPage level_0, TabPage level_1)
@@ -152,9 +150,6 @@ namespace Simulator.Controls
                 lblNumber.Visible = true;
                 lblNumber.BringToFront();
             }
-                
-
-            _numberVisible = true;
         }
 
         public void HideNumber()
@@ -164,9 +159,6 @@ namespace Simulator.Controls
                 lblNumber.Visible = false;
                 lblNumber.SendToBack();
             }
-               
-
-            _numberVisible = false;
         }
     }
 }

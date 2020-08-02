@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Simulator.Helpers;
+using Simulator.Siemens;
 
 namespace Simulator.WarehouseData
 {
@@ -119,6 +120,14 @@ namespace Simulator.WarehouseData
             }
         }
 
+        public void SetUpPlc(Plc plc)
+        {
+            foreach (var pos in _positions.Where(p => p.IsCommunicatePlc).ToList())
+            {
+                pos.SetPlc(plc);
+            }
+        }
+
 
         public void SetNeighbours()
         {
@@ -205,6 +214,11 @@ namespace Simulator.WarehouseData
             foreach (var master in _masters)
             {
                 _dbContext.Mastery.FirstOrDefault(m => m.MasterId == master.Id).Capacity = master.Capacity;
+            }
+
+            foreach (var pallet in _pallets)
+            {
+                _dbContext.Palety.FirstOrDefault(m => m.PaletaId == pallet.Id).PcId = pallet.PcId;
             }
 
 

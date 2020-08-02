@@ -39,6 +39,7 @@
           <Property Name="DataProdukcji" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="TerminPrzydatnosci" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Destynacja" Type="varchar" MaxLength="10" />
+          <Property Name="PcId" Type="int" />
         </EntityType>
         <EntityType Name="Pozycje">
           <Key>
@@ -62,6 +63,7 @@
           <Property Name="Rampa" Type="nvarchar" MaxLength="20" />
           <Property Name="MasterId" Type="int" />
           <Property Name="PaletaId" Type="int" />
+          <Property Name="PlcCommunication" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Partie">
           <Key>
@@ -136,20 +138,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SimulatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Palety">
-          <Key>
-            <PropertyRef Name="PaletaId" />
-          </Key>
-          <Property Name="PaletaId" Type="Int32" Nullable="false" />
-          <Property Name="Oznaczenie" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KodKreskowy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NazwaProduktu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Stan" Type="Int32" Nullable="false" />
-          <Property Name="NumerPartiiProdukcyjnej" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DataProdukcji" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="TerminPrzydatnosci" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Destynacja" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Partie">
           <Key>
             <PropertyRef Name="PartiaId" />
@@ -207,7 +195,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SimulatorContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Palety" EntityType="Self.Palety" />
           <EntitySet Name="Partie" EntityType="Self.Partie" />
           <EntitySet Name="PartiePalety" EntityType="Self.PartiePalety" />
           <EntitySet Name="Produkty" EntityType="Self.Produkty" />
@@ -219,10 +206,32 @@
             <End Role="Partie" EntitySet="Partie" />
             <End Role="PartiePalety" EntitySet="PartiePalety" />
           </AssociationSet>
-          <EntitySet Name="Pozycje" EntityType="SimulatorModel.Pozycje" />
           <EntitySet Name="Mastery" EntityType="SimulatorModel.Mastery" />
           <EntitySet Name="Misje" EntityType="SimulatorModel.Misje" />
+          <EntitySet Name="Pozycje" EntityType="SimulatorModel.Pozycje" />
+          <EntitySet Name="Palety" EntityType="SimulatorModel.Palety" />
         </EntityContainer>
+        <EntityType Name="Mastery">
+          <Key>
+            <PropertyRef Name="MasterId" />
+          </Key>
+          <Property Name="MasterId" Type="Int32" Nullable="false" />
+          <Property Name="Poziom" Type="Int32" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" Nullable="false" />
+          <Property Name="AktywnaMisjaId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Misje">
+          <Key>
+            <PropertyRef Name="MisjaId" />
+          </Key>
+          <Property Name="MisjaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypMisji" Type="Int32" Nullable="false" />
+          <Property Name="PozycjaOdbioruId" Type="Int32" Nullable="false" />
+          <Property Name="PozycjaDostarczeniaId" Type="Int32" Nullable="false" />
+          <Property Name="PaletaId" Type="Int32" Nullable="false" />
+          <Property Name="MasterId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="Pozycje">
           <Key>
             <PropertyRef Name="PozycjaId" />
@@ -245,27 +254,22 @@
           <Property Name="Rampa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MasterId" Type="Int32" />
           <Property Name="PaletaId" Type="Int32" />
+          <Property Name="PlcCommunication" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="Mastery">
+        <EntityType Name="Palety">
           <Key>
-            <PropertyRef Name="MasterId" />
+            <PropertyRef Name="PaletaId" />
           </Key>
-          <Property Name="MasterId" Type="Int32" Nullable="false" />
-          <Property Name="Poziom" Type="Int32" Nullable="false" />
-          <Property Name="Capacity" Type="Int32" Nullable="false" />
-          <Property Name="AktywnaMisjaId" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Misje">
-          <Key>
-            <PropertyRef Name="MisjaId" />
-          </Key>
-          <Property Name="MisjaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypMisji" Type="Int32" Nullable="false" />
-          <Property Name="PozycjaOdbioruId" Type="Int32" Nullable="false" />
-          <Property Name="PozycjaDostarczeniaId" Type="Int32" Nullable="false" />
           <Property Name="PaletaId" Type="Int32" Nullable="false" />
-          <Property Name="MasterId" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Oznaczenie" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KodKreskowy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NazwaProduktu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Stan" Type="Int32" Nullable="false" />
+          <Property Name="NumerPartiiProdukcyjnej" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DataProdukcji" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TerminPrzydatnosci" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Destynacja" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PcId" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -273,21 +277,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SimulatorModelStoreContainer" CdmEntityContainer="SimulatorContext">
-          <EntitySetMapping Name="Palety">
-            <EntityTypeMapping TypeName="SimulatorModel.Palety">
-              <MappingFragment StoreEntitySet="Palety">
-                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
-                <ScalarProperty Name="Oznaczenie" ColumnName="Oznaczenie" />
-                <ScalarProperty Name="KodKreskowy" ColumnName="KodKreskowy" />
-                <ScalarProperty Name="NazwaProduktu" ColumnName="NazwaProduktu" />
-                <ScalarProperty Name="Stan" ColumnName="Stan" />
-                <ScalarProperty Name="NumerPartiiProdukcyjnej" ColumnName="NumerPartiiProdukcyjnej" />
-                <ScalarProperty Name="DataProdukcji" ColumnName="DataProdukcji" />
-                <ScalarProperty Name="TerminPrzydatnosci" ColumnName="TerminPrzydatnosci" />
-                <ScalarProperty Name="Destynacja" ColumnName="Destynacja" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Partie">
             <EntityTypeMapping TypeName="SimulatorModel.Partie">
               <MappingFragment StoreEntitySet="Partie">
@@ -319,9 +308,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Mastery">
+            <EntityTypeMapping TypeName="SimulatorModel.Mastery">
+              <MappingFragment StoreEntitySet="Mastery">
+                <ScalarProperty Name="AktywnaMisjaId" ColumnName="AktywnaMisjaId" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Misje">
+            <EntityTypeMapping TypeName="SimulatorModel.Misje">
+              <MappingFragment StoreEntitySet="Misje">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+                <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
+                <ScalarProperty Name="PozycjaDostarczeniaId" ColumnName="PozycjaDostarczeniaId" />
+                <ScalarProperty Name="PozycjaOdbioruId" ColumnName="PozycjaOdbioruId" />
+                <ScalarProperty Name="TypMisji" ColumnName="TypMisji" />
+                <ScalarProperty Name="MisjaId" ColumnName="MisjaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Pozycje">
             <EntityTypeMapping TypeName="SimulatorModel.Pozycje">
               <MappingFragment StoreEntitySet="Pozycje">
+                <ScalarProperty Name="PlcCommunication" ColumnName="PlcCommunication" />
                 <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
                 <ScalarProperty Name="MasterId" ColumnName="MasterId" />
                 <ScalarProperty Name="Rampa" ColumnName="Rampa" />
@@ -343,26 +356,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Mastery">
-            <EntityTypeMapping TypeName="SimulatorModel.Mastery">
-              <MappingFragment StoreEntitySet="Mastery">
-                <ScalarProperty Name="AktywnaMisjaId" ColumnName="AktywnaMisjaId" />
-                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
-                <ScalarProperty Name="Poziom" ColumnName="Poziom" />
-                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Misje">
-            <EntityTypeMapping TypeName="SimulatorModel.Misje">
-              <MappingFragment StoreEntitySet="Misje">
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+          <EntitySetMapping Name="Palety">
+            <EntityTypeMapping TypeName="SimulatorModel.Palety">
+              <MappingFragment StoreEntitySet="Palety">
+                <ScalarProperty Name="PcId" ColumnName="PcId" />
+                <ScalarProperty Name="Destynacja" ColumnName="Destynacja" />
+                <ScalarProperty Name="TerminPrzydatnosci" ColumnName="TerminPrzydatnosci" />
+                <ScalarProperty Name="DataProdukcji" ColumnName="DataProdukcji" />
+                <ScalarProperty Name="NumerPartiiProdukcyjnej" ColumnName="NumerPartiiProdukcyjnej" />
+                <ScalarProperty Name="Stan" ColumnName="Stan" />
+                <ScalarProperty Name="NazwaProduktu" ColumnName="NazwaProduktu" />
+                <ScalarProperty Name="KodKreskowy" ColumnName="KodKreskowy" />
+                <ScalarProperty Name="Oznaczenie" ColumnName="Oznaczenie" />
                 <ScalarProperty Name="PaletaId" ColumnName="PaletaId" />
-                <ScalarProperty Name="PozycjaDostarczeniaId" ColumnName="PozycjaDostarczeniaId" />
-                <ScalarProperty Name="PozycjaOdbioruId" ColumnName="PozycjaOdbioruId" />
-                <ScalarProperty Name="TypMisji" ColumnName="TypMisji" />
-                <ScalarProperty Name="MisjaId" ColumnName="MisjaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

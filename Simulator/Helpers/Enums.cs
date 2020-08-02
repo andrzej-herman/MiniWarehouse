@@ -88,4 +88,12 @@ namespace Simulator.Helpers
         Active = 1,
         Finished = 2
     }
+
+    public enum PlcCommunicationStatus
+    {
+        Pending,
+        WaitingForResponse,
+        ResponseRecived,
+        Finished,
+    }
 }

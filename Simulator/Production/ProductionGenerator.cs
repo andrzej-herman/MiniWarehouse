@@ -196,6 +196,7 @@ namespace Simulator.Production
                         State = (PalletState)bp.StateId,
                         ProductionDate = date,
                         Destination = null,
+                        PcId = null,
                         Barcode = bp.Barcode.Replace("XXXXXXXX", $"{date.Year}{date.Month:00}{date.Day:00}"),
                         Type = (PalletType)Convert.ToInt32(bp.Barcode.Substring(2, 1)),
                         BatchNumber = _activeBatch.BatchNumber,

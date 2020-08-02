@@ -32,5 +32,6 @@ namespace Simulator.Database
         public string Rampa { get; set; }
         public Nullable<int> MasterId { get; set; }
         public Nullable<int> PaletaId { get; set; }
+        public bool PlcCommunication { get; set; }
     }
 }

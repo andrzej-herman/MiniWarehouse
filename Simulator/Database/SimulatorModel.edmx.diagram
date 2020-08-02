@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5382265cf823422c8e971bea9879a9dc" Name="Diagram1">
-        <EntityTypeShape EntityType="SimulatorModel.Palety" Width="2.125" PointX="0.5" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SimulatorModel.Partie" Width="2" PointX="3.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SimulatorModel.PartiePalety" Width="2" PointX="5.625" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SimulatorModel.Produkty" Width="2.125" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="SimulatorModel.FK_Partie_Produkty" ManuallyRouted="false" />
         <AssociationConnector Association="SimulatorModel.FK_PartiePalety_Partie" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SimulatorModel.Pozycje" Width="2.75" PointX="3.375" PointY="3.375" />
         <EntityTypeShape EntityType="SimulatorModel.Mastery" Width="2" PointX="9.25" PointY="3.375" />
         <EntityTypeShape EntityType="SimulatorModel.Misje" Width="2" PointX="6.75" PointY="3.375" />
+        <EntityTypeShape EntityType="SimulatorModel.Pozycje" Width="2.25" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SimulatorModel.Palety" Width="2.25" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

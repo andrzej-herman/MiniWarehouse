@@ -108,7 +108,6 @@
             this.butPowerOff.Name = "butPowerOff";
             this.butPowerOff.Size = new System.Drawing.Size(68, 68);
             this.butPowerOff.TabIndex = 3;
-            this.butPowerOff.Load += new System.EventHandler(this.butPowerOff_Load);
             // 
             // butPowerOn
             // 

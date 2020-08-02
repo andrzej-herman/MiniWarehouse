@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Simulator.WarehouseData;
+using Simulator.Helpers;
 
 namespace Simulator.Controls
 {
@@ -22,6 +23,12 @@ namespace Simulator.Controls
         {
             lblSymbol.Text = p.Symbol;
             lblSymbol.BackColor = p.Type == Helpers.PalletType.DS ? Color.Wheat : Color.Violet;
+            if (p.State != PalletState.OK)
+                lblSymbol.BackColor = Color.Red;
+
+            if (p.State == PalletState.UnreadableBarcode)
+                lblSymbol.Text = "X";
+
         }
     }
 }

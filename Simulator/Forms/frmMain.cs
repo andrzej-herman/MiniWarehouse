@@ -52,7 +52,13 @@ namespace Simulator
             CreateProductionGenerator(_dbContext);
             CreatePlc();
             CreateCabinet();
+            SetUpPlc();
             HideCover();
+        }
+
+        private void SetUpPlc()
+        {
+            _warehouse.SetUpPlc(_plc);
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using Simulator.Controls;
 using Simulator.Helpers;
+using Simulator.Siemens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,31 @@ namespace Simulator.WarehouseData
 {
     public abstract class Position 
     {
+        public Position(int id, int width, int height, int x, int y, int level, PositionType type,
+                int? forward, int? back, int? left, int? right, int? up, int? down, string bay, string ramp, int? pid, int? mid, bool plc)
+        {
+            Id = id;
+            Width = width;
+            Height = height;
+            X = x;
+            Y = y;
+            Level = (Level)level;
+            Type = type;
+            Forward = forward;
+            Back = back;
+            Left = left;
+            Right = right;
+            Up = up;
+            Down = down;
+            Bay = bay;
+            Ramp = ramp;
+            Pid = pid;
+            Mid = mid;
+            IsCommunicatePlc = plc;
+            Init();
+        }
+
+
         public int Id { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
@@ -29,6 +55,7 @@ namespace Simulator.WarehouseData
         public string Ramp { get; set; }
         public int? Pid { get; set; }
         public int? Mid { get; set; }
+        public bool IsCommunicatePlc { get; set; }
         public Pallet Pallet { get; set; }
         public Master Master { get; set; }
         public Dictionary<Site, Position> Neighbours { get; set; }
@@ -49,28 +76,7 @@ namespace Simulator.WarehouseData
             }
         }
 
-        public Position(int id, int width, int height, int x, int y, int level, PositionType type, 
-                        int? forward, int? back, int? left, int? right, int? up, int? down, string bay, string ramp, int? pid, int? mid)
-        {
-            Id = id;
-            Width = width;
-            Height = height;
-            X = x;
-            Y = y;
-            Level = (Level)level;
-            Type = type;
-            Forward = forward;
-            Back = back;
-            Left = left;
-            Right = right;
-            Up = up;
-            Down = down;
-            Bay = bay;
-            Ramp = ramp;
-            Pid = pid;
-            Mid = mid;
-            Init();
-        }
+
 
         public void CreatePosition(TabPage level_0, TabPage level_1)
         {
@@ -112,7 +118,7 @@ namespace Simulator.WarehouseData
         }
 
 
-        private void RemovePallet()
+        public void RemovePallet()
         {
             Pallet = null;
             Display.RemovePallet();
@@ -142,6 +148,7 @@ namespace Simulator.WarehouseData
             }
         }
 
+        public virtual void SetPlc(Plc plc) { }
 
     }
 }

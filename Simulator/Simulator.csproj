@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Helpers\Rand.cs" />
+    <Compile Include="Siemens\Alive.cs">
+      <DependentUpon>PlcModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Siemens\Control.cs">
+      <DependentUpon>PlcModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Siemens\Plc.cs" />
     <Compile Include="Production\Batch.cs" />
     <Compile Include="Production\BatchPallet.cs" />
@@ -170,6 +176,21 @@
     <Compile Include="Production\ProductionGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Siemens\PlcModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlcModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Siemens\PlcModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlcModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Siemens\PlcModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlcModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseData\Master.cs" />
     <Compile Include="WarehouseData\Mission.cs" />
     <Compile Include="WarehouseData\Pallet.cs" />
@@ -252,6 +273,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="Siemens\PlcModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PlcModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Siemens\PlcModel.edmx.diagram">
+      <DependentUpon>PlcModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -287,6 +315,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SimulatorModel.edmx</DependentUpon>
       <LastGenOutput>SimulatorModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Siemens\PlcModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PlcModel.edmx</DependentUpon>
+      <LastGenOutput>PlcModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Siemens\PlcModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PlcModel.edmx</DependentUpon>
+      <LastGenOutput>PlcModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

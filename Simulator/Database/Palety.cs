@@ -23,5 +23,6 @@ namespace Simulator.Database
         public System.DateTime DataProdukcji { get; set; }
         public System.DateTime TerminPrzydatnosci { get; set; }
         public string Destynacja { get; set; }
+        public Nullable<int> PcId { get; set; }
     }
 }

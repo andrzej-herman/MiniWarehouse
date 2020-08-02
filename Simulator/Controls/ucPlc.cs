@@ -39,6 +39,12 @@ namespace Simulator.Controls
 
             if (plc.State == PlcState.ON)
             {
+                if (plc.IsPcAlive)
+                    sigServer.Green();
+                else
+                    sigServer.Red();
+
+
                 if (productionGenarator.IsRunning)
                     sigProduction.Green();
                 else
@@ -55,6 +61,7 @@ namespace Simulator.Controls
                     sigBatch.Red();
                     statBatch.SetValue("--/--", true);
                 }
+
 
 
                 statMaster1.SetValue(warehouse.Masters[0].BatteryLevel, true);
@@ -114,9 +121,6 @@ namespace Simulator.Controls
             Activated?.Invoke(this, ActionType.POWER_OFF);
         }
 
-        private void butPowerOff_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
