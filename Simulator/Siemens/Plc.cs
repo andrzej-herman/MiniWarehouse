@@ -36,7 +36,12 @@ namespace Simulator.Siemens
 
         private void PositionTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            StartAliveCommunication();
+            bool res = false;
+            while (!res)
+            {
+                res = StartAliveCommunication();
+            }
+
             PositionTime?.Invoke(this);
         }
 
@@ -78,10 +83,18 @@ namespace Simulator.Siemens
 
         #region PlcCommunication
 
-        private void StartAliveCommunication()
+        private bool StartAliveCommunication()
         {
-            dbContext.Alive.FirstOrDefault(a => a.Id == 0).PlcCounter++;
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.Alive.FirstOrDefault(a => a.Id == 0).PlcCounter++;
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }       
         }
 
         public bool IsPcAlive
@@ -90,8 +103,9 @@ namespace Simulator.Siemens
             {
                 try
                 {
-                    var plc = dbContext.Alive.FirstOrDefault(a => a.Id == 0).PlcCounter;
-                    var pc = dbContext.Alive.FirstOrDefault(a => a.Id == 0).PcCounter;
+                    var query = dbContext.Alive.AsNoTracking().FirstOrDefault(a => a.Id == 0);
+                    var plc = query.PlcCounter;
+                    var pc = query.PcCounter;
                     return plc == pc;
                 }
                 catch (Exception)
@@ -124,19 +138,21 @@ namespace Simulator.Siemens
             destination = null;
             try
             {
-                var plc = dbContext.Control.FirstOrDefault(a => a.Id == 0).PlcCounter;
-                var pc = dbContext.Control.FirstOrDefault(a => a.Id == 0).PcCounter;
+                var query = dbContext.Control.AsNoTracking().FirstOrDefault(a => a.Id == 0);
+                var plc = query.PlcCounter;
+                var pc = query.PcCounter;
                 if (plc == pc)
                 {
-                    if (dbContext.Control.FirstOrDefault(a => a.Id == 0).PalletId.HasValue)
+                    if (query.PalletId.HasValue)
                     {
-                        res = dbContext.Control.FirstOrDefault(a => a.Id == 0).PalletId.Value;
-                        destination = dbContext.Control.FirstOrDefault(a => a.Id == 0).Destination;
+                        res = query.PalletId.Value;
+                        destination = query.Destination;
                     }
                 }
 
                 if (res != 0)
                 {
+                    dbContext.Control.FirstOrDefault(a => a.Id == 0).Barcode = null;
                     dbContext.Control.FirstOrDefault(a => a.Id == 0).PalletId = null;
                     dbContext.Control.FirstOrDefault(a => a.Id == 0).Destination = null;
                     dbContext.Control.FirstOrDefault(a => a.Id == 0).PalletState = null;
